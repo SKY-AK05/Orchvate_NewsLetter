@@ -13,7 +13,22 @@
     </o:OfficeDocumentSettings>
   </xml>
   <![endif]-->
-  
+<script type="text/javascript">
+var appInsights=window.appInsights||function(a){
+function b(a){t[a]=function(){var b=arguments;t.queue.push(function(){t[a].apply(t,b)})}}
+var t={config:a},u=document,v=window,o="script",s=u.createElement(o),f,l;
+s.src="https://js.monitor.azure.com/scripts/b/ai.2.min.js";
+u.getElementsByTagName(o)[0].parentNode.appendChild(s);
+t.cookie=u.cookie;
+t.queue=[];
+for(f=["trackEvent","trackPageView","trackException","trackTrace","trackDependencyData"];f.length;)b(f.pop());
+return t;
+}({
+connectionString: "InstrumentationKey=6f8ab2d0-e0c7-4ea2-8169-5edf9242551f;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/;ApplicationId=22361aff-ba99-461e-9760-3ef1b5212236"
+});
+window.appInsights=appInsights;
+appInsights.trackPageView();
+</script>  
 <style type="text/css">
 		body{
 			margin:0;
@@ -223,7 +238,7 @@
 
       <p class="body-text" style="margin:0 0 14px;">
         <strong>If you would like to receive these updates, please
-          <a href="subscribe.html" target="_blank" style="color:#150e56;text-decoration:underline;font-weight:bold;">
+          <a href="subscribe.html" target="_self" style="color:#150e56;text-decoration:underline;font-weight:bold;">
             opt in here
           </a>.
         </strong>
@@ -747,7 +762,7 @@
             <tr>
               <td bgcolor="#06907b" style="border-radius:999px;">
                 <a href="newsletter-signup.html"
-                   target="_blank"
+                   target="_self"
                    style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:14px 26px;font-size:16px;font-weight:bold;border-radius:999px;">
                   Support the Next Cohort
                 </a>
@@ -1001,7 +1016,7 @@
               <tr>
                 <td bgcolor="#06907b" align="center" style="border-radius:999px;">
                   <a href="newsletter-signup.html"
-                     target="_blank"
+                     target="_self"
                      style="display:block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:14px 18px;font-size:15px;font-weight:bold;border-radius:999px;">
                     Explore What This Could Look Like for Your Team
                   </a>
@@ -1085,7 +1100,7 @@
                   </p>
                 <td bgcolor="#06907b" align="center" style="border-radius:999px;">
                   <a href="newsletter-signup.html"
-                     target="_blank"
+                     target="_self"
                      style="display:block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:14px 18px;font-size:15px;font-weight:bold;border-radius:999px;">
                     Discuss a Pilot or Proof-of-Concept
                   </a>
@@ -1226,7 +1241,7 @@
             <p style="margin:0;font-family:Arial,Helvetica,sans-serif;color:#111111;font-size:16px;line-height:1.6;">
               Interested in applying these ideas?
               <a href="newsletter-signup.html"
-                 target="_blank"
+                 target="_self"
                  style="color:#150e56;text-decoration:underline;font-weight:bold;">
                 Start a conversation on neuroinclusive work.
               </a>
@@ -1627,7 +1642,7 @@
                 <tr>
                   <td bgcolor="#1a135f" style="border-radius:999px;">
                     <a href="newsletter-signup.html"
-                      target="_blank"
+                      target="_self"
                       style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:12px 22px;font-size:15px;font-weight:bold;border-radius:999px;">
                       Receive Orchvate updates
                     </a>
