@@ -34,23 +34,39 @@ async function handleUpdatesSubmission(name, email, submitButton) {
   };
 
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 second timeout
+
     const response = await fetch(NEWSLETTER_API, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
+      signal: controller.signal
     });
+    
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      throw new Error(`Server returned HTTP ${response.status}`);
+    }
 
     const result = await response.json();
 
     if (!result.success) {
-      throw new Error("Server returned failure");
+      throw new Error("Server returned failure:" + result.message);
     }
 
+    // Reset button after successful submission
+    setButtonLoading(submitButton, false, originalText);
     return true;
 
   } catch (error) {
     console.error("Newsletter submission failed:", error);
-    alert("Something went wrong. Please try again later.");
+    if (error.name === 'AbortError') {
+       alert("Request timed out. Please try again.");
+    } else {
+       alert("Something went wrong. Please try again later.");
+    }
     setButtonLoading(submitButton, false, originalText);
     return false;
   }
@@ -72,23 +88,39 @@ async function handleInquirySubmission(fields, submitButton) {
   };
 
   try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 second timeout
+
     const response = await fetch(INQUIRY_API, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
+      signal: controller.signal
     });
+    
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      throw new Error(`Server returned HTTP ${response.status}`);
+    }
 
     const result = await response.json();
 
     if (!result.success) {
-      throw new Error("Server returned failure");
+      throw new Error("Server returned failure:" + result.message);
     }
 
+    // Reset button after successful submission
+    setButtonLoading(submitButton, false, originalText);
     return true;
 
   } catch (error) {
     console.error("Inquiry submission failed:", error);
-    alert("Something went wrong. Please try again later.");
+    if (error.name === 'AbortError') {
+       alert("Request timed out. Please try again.");
+    } else {
+       alert("Something went wrong. Please try again later.");
+    }
     setButtonLoading(submitButton, false, originalText);
     return false;
   }
