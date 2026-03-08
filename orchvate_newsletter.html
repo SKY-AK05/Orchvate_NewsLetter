@@ -13,27 +13,12 @@
     </o:OfficeDocumentSettings>
   </xml>
   <![endif]-->
-<script type="text/javascript">
-var appInsights=window.appInsights||function(a){
-function b(a){t[a]=function(){var b=arguments;t.queue.push(function(){t[a].apply(t,b)})}}
-var t={config:a},u=document,v=window,o="script",s=u.createElement(o),f,l;
-s.src="https://js.monitor.azure.com/scripts/b/ai.2.min.js";
-u.getElementsByTagName(o)[0].parentNode.appendChild(s);
-t.cookie=u.cookie;
-t.queue=[];
-for(f=["trackEvent","trackPageView","trackException","trackTrace","trackDependencyData"];f.length;)b(f.pop());
-return t;
-}({
-connectionString: "InstrumentationKey=6f8ab2d0-e0c7-4ea2-8169-5edf9242551f;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/;ApplicationId=22361aff-ba99-461e-9760-3ef1b5212236"
-});
-window.appInsights=appInsights;
-appInsights.trackPageView();
-</script>  
+  
 <style type="text/css">
 		body{
 			margin:0;
 			padding:0;
-			background:#f6f9ff;
+			background:#ffffff;
 			-webkit-text-size-adjust:100%;
 			-ms-text-size-adjust:100%;
 		}
@@ -64,7 +49,7 @@ appInsights.trackPageView();
 		}
 		.container{
 			width:100%;
-			max-width:700px;
+			max-width:600px;
 			margin:0 auto;
 		}
 		.pb-0{
@@ -140,217 +125,21 @@ appInsights.trackPageView();
 			padding-left:16px !important;
 			padding-right:16px !important;
 		}
-		#general_conversation td[style*="padding:60px"] {
-			padding: 40px 16px !important;
-		}
-		.newsletter-card {
-			padding: 40px 20px !important;
-			border-radius: 16px !important;
-		}
-		.newsletter-heading {
-			font-size: 26px !important;
-		}
-		.newsletter-text {
-			font-size: 15px !important;
-			text-align: center !important;
-		}
+
+}	@media screen and (max-width:599px){
 		.stack td{
 			display:block !important;
 			width:100% !important;
 		}
-		.stack, .stack table, .stack td, .stack tr {
-			height: auto !important;
-			padding-left: 4px !important;
-			padding-right: 4px !important;
-		}
-		.mobile-center, .mobile-center td, .mobile-center h3, .mobile-center p, .mobile-center h4 {
+
+}	@media screen and (max-width:599px){
+		.mobile-center{
 			text-align:center !important;
 		}
-		.btn-stack {
-			display: block !important;
-			width: 100% !important;
-			margin-bottom: 15px !important;
-			padding-right: 0 !important;
-		}
-		.btn-stack table {
-			width: 100% !important;
-		}
-		.btn-stack table a {
-			display: block !important;
-			text-align: center !important;
-		}
-		#awards .px {
-			text-align: center !important;
-		}
-		#awards .stack td {
-			padding-top: 15px !important;
-			padding-bottom: 15px !important;
-		}
-		#awards .stack > tbody > tr > td {
-			padding-bottom: 10px !important;
-		}
-		td[style*="linear-gradient"] {
-			padding-left: 20px !important;
-			background: linear-gradient(to right, #06907b 0, #06907b 10px, #f6f9ff 10px, #f6f9ff 100%) !important;
-		}
-	}
 
-    /* NASSCOM Achievements Buttons (Desktop & Global) */
-    .nasscom-btns td {
-        padding: 5px !important;
-    }
-    .nasscom-btn {
-        display: inline-block !important;
-        background-color: #150e56 !important;
-        color: #ffffff !important;
-        padding: 10px 22px !important;
-        border-radius: 999px !important;
-        font-family: Arial, sans-serif !important;
-        font-size: 14px !important;
-        font-weight: bold !important;
-        text-decoration: none !important;
-        transition: all 0.3s ease !important;
-        box-shadow: 0 2px 6px rgba(21, 14, 86, 0.15) !important;
-    }
-    .nasscom-btn:visited { color: #ffffff !important; }
-    .nasscom-btn:hover {
-        background-color: #01215d !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 0 5px 15px rgba(21, 14, 86, 0.3) !important;
-        color: #ffffff !important;
-    }
-
-    @media screen and (max-width:599px){
-        .nasscom-btns tr {
-            display: block !important;
-            text-align: center !important;
-        }
-		.nasscom-btns td {
-			display: inline-block !important;
-			width: 48% !important;
-			padding: 4px !important;
-			box-sizing: border-box !important;
-            vertical-align: top !important;
-		}
-		.nasscom-btns td:last-child {
-			width: 100% !important;
-			display: block !important;
-			padding-top: 10px !important;
-		}
-        .nasscom-btn {
-            display: block !important;
-            max-width: 160px !important;
-            margin: 0 auto !important;
-            padding: 12px 10px !important;
-            font-size: 13px !important;
-        }
-	}
-	.modal-overlay {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, 0.7);
-		display: none;
-		align-items: center;
-		justify-content: center;
-		z-index: 99999;
-		backdrop-filter: blur(5px);
-		padding: 20px;
-		box-sizing: border-box;
-	}
-	.modal-content {
-		background: #ffffff;
-		width: 100%;
-		max-width: 550px;
-		max-height: 90vh; /* Limit height to 90% of viewport */
-		overflow-y: auto; /* Add vertical scrollbar if needed */
-		padding: 35px;
-		border-radius: 16px;
-		position: relative;
-		box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-		animation: modalFadeIn 0.4s ease-out;
-		box-sizing: border-box;
-		font-family: Arial, Helvetica, sans-serif;
-	}
-	/* Custom scrollbar for better look */
-	.modal-content::-webkit-scrollbar {
-		width: 8px;
-	}
-	.modal-content::-webkit-scrollbar-track {
-		background: #f1f1f1;
-		border-radius: 10px;
-	}
-	.modal-content::-webkit-scrollbar-thumb {
-		background: #cad3ff;
-		border-radius: 10px;
-	}
-	.modal-content::-webkit-scrollbar-thumb:hover {
-		background: #150e56;
-	}
-	@keyframes modalFadeIn {
-		from { opacity: 0; transform: scale(0.95); }
-		to { opacity: 1; transform: scale(1); }
-	}
-	.modal-close {
-		position: absolute;
-		top: 15px;
-		right: 15px;
-		font-size: 28px;
-		cursor: pointer;
-		color: #999;
-		line-height: 1;
-		transition: color 0.2s;
-	}
-	.modal-close:hover { color: #150e56; }
-	.modal-logo { text-align: center; margin-bottom: 25px; }
-	.modal-logo img { width: 140px; margin: 0 auto; display: block; }
-	.modal-title { font-size: 26px; color: #150e56; font-weight: bold; margin-bottom: 12px; }
-	.modal-desc { font-size: 15px; line-height: 1.6; color: #333; margin-bottom: 20px; }
-	.modal-notice { 
-		background: #f4f7fa; padding: 12px 16px; border-left: 4px solid #06907b; 
-		border-radius: 4px; font-size: 13px; color: #666; margin-bottom: 20px;
-	}
-	.modal-form-group { margin-bottom: 18px; }
-	.modal-label { display: block; font-size: 14px; font-weight: bold; color: #150e56; margin-bottom: 6px; }
-	.modal-input { 
-		width: 100%; padding: 12px; border: 1px solid #cad3ff; border-radius: 8px; 
-		box-sizing: border-box; font-size: 15px; outline: none; transition: border-color 0.2s;
-		font-family: inherit;
-	}
-	.modal-input:focus { border-color: #150e56; }
-	.modal-input.invalid { border-color: #cf222e; background: #fff8f8; }
-	.modal-error { color: #cf222e; font-size: 12px; margin-top: 4px; display: none; }
-	.modal-consent { display: flex; align-items: flex-start; gap: 10px; margin-top: 20px; cursor: pointer; }
-	.modal-consent input { margin-top: 3px; }
-	.modal-consent-text { font-size: 14px; color: #666; line-height: 1.4; }
-	.modal-submit { 
-		background: #150e56; color: #fff; border: none; padding: 14px 30px; 
-		border-radius: 30px; font-size: 16px; font-weight: bold; cursor: pointer; 
-		width: 100%; margin-top: 25px; transition: background 0.2s;
-		font-family: inherit;
-	}
-	.modal-submit:hover { background: #01215d; }
-	
-
-	.success-icon {
-		width: 70px;
-		height: 70px;
-		background: #06907b;
-		border-radius: 50%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		margin: 0 auto 20px;
-	}
-	.success-icon svg { width: 40px; height: 40px; fill: white; }
-	.modal-success { text-align: center; display: none; }
-	.modal-success h2 { font-size: 24px; color: #150e56; margin-bottom: 15px; font-weight: bold; }
-	.modal-success p { font-size: 15px; color: #555; line-height: 1.6; margin-bottom: 15px; }
-	.success-divider { height: 4px; background: #06907b; width: 60px; margin: 20px auto; border-radius: 2px; }
-</style></head>
+}</style></head>
 <body style="margin:0; padding:0;">
+  <div style="display:none; font-size:1px; color:#ffffff; line-height:1px; max-height:0px; max-width:0px; opacity:0; overflow:hidden;">*|MC_PREVIEW_TEXT|*</div>
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f6f9ff"></table>
     <tr>
@@ -362,7 +151,7 @@ appInsights.trackPageView();
               HEADER
      ========================= -->
   <tr>
-    <td bgcolor="#f6f9ff" class="px" style="padding-top:22px;padding-bottom:18px;text-align:center;">
+    <td bgcolor="#EEF4FF" class="px" style="padding-top:22px;padding-bottom:18px;text-align:center;">
 
       <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/c2e0273b-0dab-d392-fe35-965293bee40c.png"
           width="150"
@@ -381,95 +170,74 @@ appInsights.trackPageView();
   </tr>
 
   <tr>
-    <td bgcolor="#150e56" style="height:6px;line-height:6px;font-size:6px;">&nbsp;</td>
+    <td bgcolor="#06907b" style="height:6px;line-height:6px;font-size:6px;">&nbsp;</td>
   </tr>
 
     <tr>
     <td style="padding:0;">
       <img
         src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/01b83340-f389-9714-871e-f30c2512ade4.png"
-        width="700"
+        width="600"
         alt="Orchvate Year-in-Review 2025"
-        style="display:block;width:100%;max-width:700px;height:auto;"
+        style="display:block;width:100%;max-width:600px;height:auto;"
         border="0"
       >
     </td>
   </tr>
 
- <!-- NOTE FROM FOUNDERS -->
+          <!-- NOTE FROM FOUNDERS -->
   <tr>
-    <td class="px" style="padding-top:60px; padding-bottom:60px; background-color:#f6f9ff; text-align:left;">
-      
-      <div style="margin:0;">
+    <td class="px" style="padding-top:20px;padding-bottom:12px;">
 
-        <p style="margin:0 0 12px; font-family:Arial,Helvetica,sans-serif; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:#666; font-weight:bold;">
-          Orchvate <span style="color:#06907b;">•</span> Year in Review 2025
-        </p>
+      <p class="body-text" style="margin:0 0 10px;">
+        <strong>Orchvate | Year in Review 2025</strong>
+      </p>
 
-        <h1 style="margin:0 0 8px; font-family:Arial,Helvetica,sans-serif; font-size:32px; line-height:1.2; font-weight:bold; color:#150e56;">
+      <p class="body-text" style="margin:0 0 10px;">
+        <strong style="font-size:20px;line-height:1.3;display:block;color:#111111;">
           2025 was a year of sharpening.
-        </h1>
-        
-        <p style="margin:0 0 24px; font-family:Arial,Helvetica,sans-serif; font-size:18px; color:#666;">
-          Less noise. More depth.
-        </p>
+        </strong>
+        <span style="display:block;margin-top:4px;">Less noise. More depth.</span>
+      </p>
 
-        <div style="height:1px; background:#eeeeee; margin:0 0 24px;"></div>
+      <p class="body-text" style="margin:0 0 10px;">
+        We focused on building <strong>neuroinclusive workforce models that hold up inside real organisations.</strong>
+        Not as intent, but as systems that work day to day.
+      </p>
 
-        <p class="body-text" style="margin:0 0 20px; font-size:16px; line-height:1.8; color:#111111;">
-          We focused on building <strong>neuroinclusive workforce models that hold up inside real organisations</strong> — not just as intent, but as systems that work day to day.
-        </p>
+      <p class="body-text" style="margin:0 0 10px;">
+        Across enterprise collaborations, CSR partnerships, pilots, and long-term engagements, we kept asking:
+      </p>
 
-        <p class="body-text" style="margin:0 0 20px; font-size:16px; line-height:1.8; color:#111111;">
-          Across enterprise collaborations, CSR partnerships, pilots, and long-term engagements, we kept asking:
-        </p>
+      <p class="body-text" style="margin:0 0 10px;">
+        <strong>What does sustainable inclusion look like when it is designed into the structure?</strong>
+      </p>
 
-        <div style="margin:24px 0; padding:24px; background-color:#f4f7fa; border-left:4px solid #06907b; border-radius:4px;">
-          <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:20px; line-height:1.5; color:#150e56; font-weight:bold;">
-            “What does sustainable inclusion look like when it is designed into the structure?”
-          </p>
-        </div>
+      <p class="body-text" style="margin:0 0 10px;">
+        We learned. We refined. We stayed with the work.
+      </p>
 
-        <p class="body-text" style="margin:0 0 16px; font-size:16px; line-height:1.8; color:#111111;">
-          We learned.
-        </p>
-        <p class="body-text" style="margin:0 0 16px; font-size:16px; line-height:1.8; color:#111111;">
-          We refined.
-        </p>
-        <p class="body-text" style="margin:0 0 32px; font-size:16px; line-height:1.8; color:#111111;">
-          We stayed with the work.
-        </p>
+      <p class="body-text" style="margin:0 0 10px;">
+        We share updates occasionally. Only when there is something worth passing on.
+        A learning. A case story. A systems insight.
+      </p>
 
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px;">
-          <tr>
-            <td style="font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; font-weight:bold; width:1%; white-space:nowrap; padding-right:12px;">
-              If you’d like to receive updates like this:
-            </td>
-            <td style="border-bottom:1px solid #eeeeee;">&nbsp;</td>
-          </tr>
-        </table>
+      <p class="body-text" style="margin:0 0 14px;">
+        <strong>If you would like to receive these updates, please
+          <a href="https://mailchi.mp/29608ce1fab2/newsletter-subscription" target="_blank" style="color:#150e56;text-decoration:underline;font-weight:bold;">
+            opt in here
+          </a>.
+        </strong>
+      </p>
 
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 24px 0 48px;">
-          <tr>
-            <td bgcolor="#150e56" style="border-radius:6px;">
-              <a href="#" class="open-newsletter" style="display:inline-block; font-family:Arial,Helvetica,sans-serif; color:#ffffff; text-decoration:none; padding:12px 28px; font-size:16px; font-weight:bold;">
-                Join our updates
-              </a>
-            </td>
-          </tr>
-        </table>
-
-        <!-- Sign-off -->
-        <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.6;">
-          With gratitude,<br>
-          <strong style="font-size:18px; color:#150e56;">Geethanjali &amp; Panchali</strong><br>
-          <span style="font-size:14px; color:#666; letter-spacing:1px;">Cofounders, Orchvate</span>
-        </p>
-
-      </div>
+      <p class="body-text" style="margin:0;">
+        With gratitude,<br>
+        <strong>Geethanjali &amp; Panchali</strong><br>
+        Cofounders, Orchvate
+      </p>
 
     </td>
-  </tr>
+</tr>
           
 <!-- =========================================
      HIGHLIGHTS OF 2025
@@ -801,11 +569,11 @@ appInsights.trackPageView();
 
                   <!--[if mso]>
                   <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" arcsize="6%" stroke="f"
-                    href="https://youtu.be/wG5fJqhksS0" style="width:672px;height:378px;">
-                    <v:fill type="frame" src="https://img.youtube.com/vi/wG5fJqhksS0/mqdefault.jpg" color="#000000"/>
+                    href="https://youtu.be/wG5fJqhksS0" style="width:572px;height:322px;">
+                    <v:fill type="frame" src="https://img.youtube.com/vi/wG5fJqhksS0/hqdefault.jpg" color="#000000"/>
                     <v:textbox inset="0,0,0,0">
                       <div>
-                        <table role="presentation" width="672" height="378" cellpadding="0" cellspacing="0" border="0">
+                        <table role="presentation" width="572" height="322" cellpadding="0" cellspacing="0" border="0">
                           <tr>
                             <td align="center" valign="middle">
                               <img src="https://img.icons8.com/ios-filled/100/ffffff/play--v1.png"
@@ -820,12 +588,12 @@ appInsights.trackPageView();
                   <![endif]-->
 
                   <!--[if !mso]><!-->
-                  <a id="hover-video" href="https://youtu.be/wG5fJqhksS0" target="_blank" style="display:block;text-decoration:none;">
+                  <a href="https://youtu.be/wG5fJqhksS0" target="_blank" style="display:block;text-decoration:none;">
                     <div style="position:relative;display:block;">
-                      <img src="https://img.youtube.com/vi/wG5fJqhksS0/mqdefault.jpg"
-                          width="672"
+                      <img src="https://img.youtube.com/vi/wG5fJqhksS0/hqdefault.jpg"
+                          width="572"
                           alt="Watch our 2025 recap video"
-                          style="display:block;width:100%;max-width:672px;height:378px;object-fit:cover;border-radius:14px;border:0;">
+                          style="display:block;width:100%;max-width:572px;height:auto;border-radius:14px;border:0;">
                       <img src="https://img.icons8.com/ios-filled/100/ffffff/play--v1.png"
                           width="66" height="66" alt=""
                           style="position:absolute;left:50%;top:50%;margin-left:-33px;margin-top:-33px;
@@ -979,9 +747,8 @@ appInsights.trackPageView();
           <table role="presentation" cellpadding="0" cellspacing="0" border="0">
             <tr>
               <td bgcolor="#06907b" style="border-radius:999px;">
-                <a href="secondform.html?inquiry=Cohort%20%2F%20program%20sponsorship%20(CSR%20%2F%20foundation)" 
-                   class="open-inquiry"
-                   data-inquiry="Cohort / program sponsorship (CSR / foundation)"
+                <a href="MAILCHIMP_FORM_URL"
+                   target="_blank"
                    style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:14px 26px;font-size:16px;font-weight:bold;border-radius:999px;">
                   Support the Next Cohort
                 </a>
@@ -1234,9 +1001,8 @@ appInsights.trackPageView();
             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:430px;">
               <tr>
                 <td bgcolor="#06907b" align="center" style="border-radius:999px;">
-                  <a href="secondform.html?inquiry=Neuroinclusive%20engagement%20models" 
-                     class="open-inquiry"
-                     data-inquiry="Neuroinclusive engagement models"
+                  <a href="MAILCHIMP_FORM_URL"
+                     target="_blank"
                      style="display:block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:14px 18px;font-size:15px;font-weight:bold;border-radius:999px;">
                     Explore What This Could Look Like for Your Team
                   </a>
@@ -1319,9 +1085,8 @@ appInsights.trackPageView();
                     <em>Some pilot engagements evolve into long-running enterprise delivery.</em>
                   </p>
                 <td bgcolor="#06907b" align="center" style="border-radius:999px;">
-                  <a href="secondform.html?inquiry=Pilot%20%2F%20proof%20of%20concept" 
-                     class="open-inquiry"
-                     data-inquiry="Pilot / proof of concept"
+                  <a href="SHARED_MAILCHIMP_FORM_URL"
+                     target="_blank"
                      style="display:block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:14px 18px;font-size:15px;font-weight:bold;border-radius:999px;">
                     Discuss a Pilot or Proof-of-Concept
                   </a>
@@ -1461,9 +1226,8 @@ appInsights.trackPageView();
           <td style="padding:14px 16px; background:#f6f9ff; text-align:center;">
             <p style="margin:0;font-family:Arial,Helvetica,sans-serif;color:#111111;font-size:16px;line-height:1.6;">
               Interested in applying these ideas?
-              <a href="secondform.html?inquiry=General%20conversation" 
-                 class="open-inquiry"
-                 data-inquiry="General conversation"
+              <a href="MAILCHIMP_FORM_URL"
+                 target="_blank"
                  style="color:#150e56;text-decoration:underline;font-weight:bold;">
                 Start a conversation on neuroinclusive work.
               </a>
@@ -1518,48 +1282,63 @@ appInsights.trackPageView();
                 <!-- CONTENT -->
                 <td style="padding:18px;border-radius:0 14px 14px 0;">
 
-                  <!-- 1. FEATURED (Always at the very top) -->
-                  <p class="mobile-center" style="margin:0 0 15px;font-family:Arial;font-size:12px;color:#01215d;letter-spacing:1px;text-transform:uppercase;">
-                    Featured
-                  </p>
+                  <table width="100%">
+                    <tr>
 
-                  <table width="100%" class="stack" role="presentation">
-                    <tr dir="rtl">
+                      <!-- TEXT -->
+                      <td valign="top">
 
-                      <!-- 2. LOGO (Appears 2nd on mobile, stays on the RIGHT on desktop) -->
-                      <td width="130" align="center" valign="top" class="mobile-center" dir="ltr" style="padding-bottom:20px;">
-                        <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/a63d9a37-6c21-15d3-b379-678a5601f3f5.png" width="90" alt="NASSCOM" style="display:inline-block;">
-                      </td>
-
-                      <!-- 3, 4, 5. HEADING, DESCRIPTION & BUTTONS (Appears after logo on mobile, on the LEFT on desktop) -->
-                      <td valign="top" class="mobile-center" dir="ltr">
+                        <p style="margin:0 0 6px;font-family:Arial;font-size:12px;color:#01215d;letter-spacing:1px;text-transform:uppercase;">
+                          Featured
+                        </p>
 
                         <h3 style="margin:0 0 10px;font-family:Arial;color:#150e56;font-size:20px;font-weight:bold;">
                           Recognized in three NASSCOM publications
                         </h3>
 
-                        <p style="margin:0 0 18px;font-family:Arial;color:#111;font-size:15px;line-height:1.6;">
+                        <p style="margin:0 0 14px;font-family:Arial;color:#111;font-size:15px;line-height:1.6;">
                           A proud milestone — Our work was highlighted across multiple NASSCOM community publications.
                         </p>
 
-                        <!-- BUTTONS (2 on top row, 1 beneath on mobile) -->
-                        <table role="presentation" cellpadding="0" cellspacing="0" class="nasscom-btns" align="center">
+                        <!-- BUTTONS -->
+                        <table role="presentation" cellpadding="0" cellspacing="0">
                           <tr>
-                            <td>
-                              <a href="https://community.nasscom.in/communities/neurodiversity/neurodiversity-and-future-work-india"
-                                 class="nasscom-btn">Future of Work</a>
-                            </td>
-                            <td>
-                              <a href="https://community.nasscom.in/communities/people-disability-pwd/envisioning-future-disability-inclusion-india"
-                                 class="nasscom-btn">Inclusion India</a>
-                            </td>
-                            <td>
-                              <a href="https://community.nasscom.in/communities/diversity-and-inclusion/dei-best-practices-whitepaper-randstad-supported-nasscom"
-                                 class="nasscom-btn">DEI Report</a>
-                            </td>
+
+                            <td style="padding-right:8px;">
+  <table><tr><td bgcolor="#150e56" style="border-radius:999px;">
+    <a href="https://community.nasscom.in/communities/neurodiversity/neurodiversity-and-future-work-india"
+       style="color:#ffffff;padding:8px 14px;display:inline-block;font-family:Arial;font-size:14px;">
+      Future of Work
+    </a>
+  </td></tr></table>
+</td>
+
+<td style="padding-right:8px;">
+  <table><tr><td bgcolor="#150e56" style="border-radius:999px;">
+    <a href="https://community.nasscom.in/communities/people-disability-pwd/envisioning-future-disability-inclusion-india"
+       style="color:#ffffff;padding:8px 14px;display:inline-block;font-family:Arial;font-size:14px;">
+      Inclusion India
+    </a>
+  </td></tr></table>
+</td>
+
+<td>
+  <table><tr><td bgcolor="#150e56" style="border-radius:999px;">
+    <a href="https://community.nasscom.in/communities/diversity-and-inclusion/dei-best-practices-whitepaper-randstad-supported-nasscom"
+       style="color:#ffffff;padding:8px 14px;display:inline-block;font-family:Arial;font-size:14px;">
+      DEI Report
+    </a>
+  </td></tr></table>
+</td>
+
                           </tr>
                         </table>
 
+                      </td>
+
+                      <!-- LOGO -->
+                      <td width="120" align="right" valign="top">
+                        <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/a63d9a37-6c21-15d3-b379-678a5601f3f5.png" width="90" alt="NASSCOM">
                       </td>
 
                     </tr>
@@ -1586,35 +1365,73 @@ appInsights.trackPageView();
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
                          style="background:#ffffff;border-radius:14px;border:1px solid #e3ecff;">
                     <tr>
-                      <td style="padding:22px 18px;text-align:center;">
-                        <!-- TITLE -->
-                        <h4 style="margin:0 0 15px;font-family:Arial,Helvetica,sans-serif;color:#150e56;font-size:16px;line-height:1.35;text-align:center;">
-                          Featured in Economic Times<br>&amp; Business Standard
-                        </h4>
+                      <td style="padding:18px 16px;text-align:center;">
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="height:200px;">
 
-                        <!-- LOGOS & BUTTONS GRID -->
-                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="stack">
+                          <!-- TITLE -->
                           <tr>
-                            <!-- ET BLOCK -->
-                            <td width="50%" align="center" valign="top" class="mobile-center" style="padding-bottom:15px;">
-                              <div style="margin-bottom:12px;">
-                                <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/30696c53-67d4-2e82-8f4d-8a9d422ae5cf.png"
-                                     width="72" alt="Economic Times"
-                                     style="display:inline-block;border:0;">
-                              </div>
-                              <a href="https://economictimes.indiatimes.com/" class="nasscom-btn" style="font-size:12px;padding:8px 14px;">Read ET</a>
-                            </td>
-
-                            <!-- BS BLOCK -->
-                            <td width="50%" align="center" valign="top" class="mobile-center" style="padding-bottom:15px;">
-                              <div style="margin-bottom:12px;">
-                                <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/d829d579-1e5e-ddb4-8876-764c02ad12e5.png"
-                                     width="72" alt="Business Standard"
-                                     style="display:inline-block;border:0;">
-                              </div>
-                              <a href="https://www.business-standard.com/" class="nasscom-btn" style="font-size:12px;padding:8px 14px;">Read BS</a>
+                            <td valign="top" style="height:56px;">
+                              <h4 style="margin:0;font-family:Arial,Helvetica,sans-serif;color:#150e56;font-size:16px;line-height:1.35;">
+                                Featured in Economic Times<br>&amp; Business Standard
+                              </h4>
                             </td>
                           </tr>
+
+                          <!-- LOGOS -->
+                          <tr>
+                            <td valign="middle" align="center" style="height:92px;">
+                              <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                  <td align="center" valign="middle" style="padding:0 10px;">
+                                    <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/30696c53-67d4-2e82-8f4d-8a9d422ae5cf.png"
+                                         width="72" alt="Economic Times"
+                                         style="display:block;border:0;outline:none;text-decoration:none;height:auto;">
+                                  </td>
+                                  <td align="center" valign="middle" style="padding:0 10px;">
+                                    <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/d829d579-1e5e-ddb4-8876-764c02ad12e5.png"
+                                         width="72" alt="Business Standard"
+                                         style="display:block;border:0;outline:none;text-decoration:none;height:auto;">
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
+                          <!-- BUTTONS -->
+                          <tr>
+                            <td valign="bottom" align="center" style="height:52px;">
+                              <table role="presentation" align="center" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                  <td align="center" style="padding:0 6px 0 0;">
+                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                      <tr>
+                                        <td bgcolor="#150e56" style="border-radius:999px;">
+                                          <a href="https://economictimes.indiatimes.com/"
+                                             style="color:#ffffff;padding:10px 16px;display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1;font-weight:bold;text-decoration:none;">
+                                            Read ET
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+
+                                  <td align="center" style="padding:0 0 0 6px;">
+                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                      <tr>
+                                        <td bgcolor="#150e56" style="border-radius:999px;">
+                                          <a href="https://www.business-standard.com/"
+                                             style="color:#ffffff;padding:10px 16px;display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1;font-weight:bold;text-decoration:none;">
+                                            Read BS
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
                         </table>
                       </td>
                     </tr>
@@ -1628,15 +1445,40 @@ appInsights.trackPageView();
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
                          style="background:#ffffff;border-radius:14px;border:1px solid #e3ecff;">
                     <tr>
-                      <td style="padding:22px 18px;text-align:center;">
-                        <h4 style="margin:0 0 15px;font-family:Arial,Helvetica,sans-serif;color:#150e56;font-size:16px;line-height:1.35;text-align:center;min-height:42px;">
-                          Microsoft AI First Movers<br>series
-                        </h4>
-                        <div style="margin-bottom:15px; height:80px; display:flex; align-items:center; justify-content:center;">
-                          <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/5aefbbd5-7266-beaf-e9e0-c4f829277566.png"
-                               width="84" alt="Microsoft" style="display:inline-block; border:0;">
-                        </div>
-                        <a href="https://www.microsoft.com/" class="nasscom-btn" style="font-size:12px;padding:8px 14px;">View feature</a>
+                      <td style="padding:18px 16px;text-align:center;">
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="height:200px;">
+                          <tr>
+                            <td valign="top" style="height:56px;">
+                              <h4 style="margin:0;font-family:Arial,Helvetica,sans-serif;color:#150e56;font-size:16px;line-height:1.35;">
+                                Microsoft AI First Movers<br>series
+                              </h4>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td valign="middle" align="center" style="height:92px;">
+                              <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/5aefbbd5-7266-beaf-e9e0-c4f829277566.png"
+                                   width="84"
+                                   alt="Microsoft"
+                                   style="display:block;border:0;outline:none;text-decoration:none;height:auto;">
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td valign="bottom" align="center" style="height:52px;">
+                              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                  <td bgcolor="#150e56" style="border-radius:999px;">
+                                    <a href="https://www.microsoft.com/"
+                                       style="color:#ffffff;padding:10px 16px;display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1;font-weight:bold;text-decoration:none;border-radius:999px;">
+                                      View feature
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
                       </td>
                     </tr>
                   </table>
@@ -1652,15 +1494,41 @@ appInsights.trackPageView();
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
                          style="background:#ffffff;border-radius:14px;border:1px solid #e3ecff;">
                     <tr>
-                      <td style="padding:22px 18px;text-align:center;">
-                        <h4 style="margin:0 0 15px;font-family:Arial,Helvetica,sans-serif;color:#150e56;font-size:16px;line-height:1.35;text-align:center;min-height:42px;">
-                          Co-founder appointed to<br>Neurowrx Board
-                        </h4>
-                        <div style="margin-bottom:15px; height:80px; display:flex; align-items:center; justify-content:center;">
-                          <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/8ffed290-0b34-3466-f63f-9266147a8e2e.png"
-                               alt="NeuroWRX" style="display:inline-block; border:0; height:70px; width:auto;">
-                        </div>
-                        <a href="https://www.neurowrx.org/" class="nasscom-btn" style="font-size:12px;padding:8px 14px;">Read announcement</a>
+                      <td style="padding:18px 16px;text-align:center;">
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="height:200px;">
+
+                          <tr>
+                            <td valign="top" style="height:56px;">
+                              <h4 style="margin:0;font-family:Arial,Helvetica,sans-serif;color:#150e56;font-size:16px;line-height:1.35;">
+                                Co-founder appointed to<br>Neurowrx Board
+                              </h4>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td valign="middle" align="center" style="height:92px;">
+                              <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/8ffed290-0b34-3466-f63f-9266147a8e2e.png"
+                                   alt="NeuroWRX"
+                                   style="display:block;border:0;outline:none;text-decoration:none;height:70px;width:auto;">
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td valign="bottom" align="center" style="height:52px;">
+                              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                  <td bgcolor="#150e56" style="border-radius:999px;">
+                                    <a href="https://www.neurowrx.org/"
+                                       style="color:#ffffff;padding:10px 16px;display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1;font-weight:bold;text-decoration:none;border-radius:999px;">
+                                      Read announcement
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+
+                        </table>
                       </td>
                     </tr>
                   </table>
@@ -1673,15 +1541,40 @@ appInsights.trackPageView();
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
                          style="background:#ffffff;border-radius:14px;border:1px solid #e3ecff;">
                     <tr>
-                      <td style="padding:22px 18px;text-align:center;">
-                        <h4 style="margin:0 0 15px;font-family:Arial,Helvetica,sans-serif;color:#150e56;font-size:16px;line-height:1.35;text-align:center;min-height:42px;">
-                          Winner: Global CND Award
-                        </h4>
-                        <div style="margin-bottom:15px; height:80px; display:flex; align-items:center; justify-content:center;">
-                          <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/a912cfb2-e318-35e3-5fc7-48cac0c42adb.png"
-                               width="78" alt="Award" style="display:inline-block; border:0;">
-                        </div>
-                        <a href="https://geniuswithin.org/" class="nasscom-btn" style="font-size:12px;padding:8px 14px;">View award</a>
+                      <td style="padding:18px 16px;text-align:center;">
+                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="height:200px;">
+                          <tr>
+                            <td valign="top" style="height:56px;">
+                              <h4 style="margin:0;font-family:Arial,Helvetica,sans-serif;color:#150e56;font-size:16px;line-height:1.35;">
+                                Winner: Global CND Award
+                              </h4>
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td valign="middle" align="center" style="height:92px;">
+                              <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/a912cfb2-e318-35e3-5fc7-48cac0c42adb.png"
+                                   width="78"
+                                   alt="Award"
+                                   style="display:block;border:0;outline:none;text-decoration:none;height:auto;">
+                            </td>
+                          </tr>
+
+                          <tr>
+                            <td valign="bottom" align="center" style="height:52px;">
+                              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                                <tr>
+                                  <td bgcolor="#150e56" style="border-radius:999px;">
+                                    <a href="https://geniuswithin.org/"
+                                       style="color:#ffffff;padding:10px 16px;display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1;font-weight:bold;text-decoration:none;border-radius:999px;">
+                                      View award
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
                       </td>
                     </tr>
                   </table>
@@ -1700,38 +1593,49 @@ appInsights.trackPageView();
       STAY IN TOUCH
      ========================================= -->
   <tr id="general_conversation">
-    <td bgcolor="#06907b" style="padding:60px 24px;">
+    <td bgcolor="#06907b" style="padding:22px;">
 
-      <div class="newsletter-card" style="background:#150e56; border-radius:24px; padding:64px 40px; text-align:center; max-width:540px; margin:0 auto;">
-        
-        <p style="margin:0 0 10px; font-family:Arial,Helvetica,sans-serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:#06907b; font-weight:800;">
-          Reach out
-        </p>
+      <div style="border:2px solid #1a135f;border-radius:16px;overflow:hidden;">
 
-        <h2 class="newsletter-heading" style="margin:0 0 24px; font-family:Arial,Helvetica,sans-serif; font-size:36px; line-height:1.2; font-weight:bold; color:#ffffff;">
-          Stay in touch
-        </h2>
-
-        <p class="newsletter-text" style="
-          margin:0 auto 36px;
-          font-family:Arial,Helvetica,sans-serif;
-          color:#e8f9f5;
-          font-size:16px;
-          line-height:1.8;
-          text-align:center;
-          max-width:440px;
-        ">
-          We’re just beginning to share our work more regularly.<br><br>
-          If you’d like to receive <strong>occasional updates from Orchvate</strong>— reflections, case stories, or invitations to conversations— you can opt in below. <br></br> If not, no action is needed. Either way, thank you for being part of the ecosystem we’re learning with.
-        </p>
-
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
           <tr>
-            <td bgcolor="#06907b" style="border-radius:24px;">
-              <a href="#" class="open-newsletter"
-                style="display:inline-block; font-family:Arial,Helvetica,sans-serif; color:#ffffff; text-decoration:none; padding:18px 36px; font-size:16px; font-weight:bold; border-radius:24px;">
-                Receive Orchvate updates
-              </a>
+            <td align="center" class="px" style="padding:24px;">
+
+              <p style="margin:0 0 6px;font-family:Arial,Helvetica,sans-serif;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#e8f9f5;text-align:center;">
+                Reach out
+              </p>
+
+              <h2 style="margin:0 0 12px;font-family:Arial,Helvetica,sans-serif;font-size:24px;line-height:1.3;font-weight:bold;color:#ffffff;text-align:center;">
+                Stay in touch
+              </h2>
+
+              <p style="
+                margin:0 auto 16px;
+                max-width:420px;
+                font-family:Arial,Helvetica,sans-serif;
+                color:#e8f9f5;
+                font-size:15px;
+                line-height:1.6;
+                text-align:left;
+              ">
+                We’re just beginning to share our work more regularly.<br><br>
+                If you’d like to receive <strong>occasional updates from Orchvate</strong>— reflections, case stories, or invitations to conversations— you can opt in below. <br></br> If not, no action is needed. Either way, thank you for being part of the ecosystem we’re learning with.
+              </p>
+
+              
+
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                <tr>
+                  <td bgcolor="#1a135f" style="border-radius:999px;">
+                    <a href="https://mailchi.mp/29608ce1fab2/newsletter-subscription"
+                      target="_blank"
+                      style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:12px 22px;font-size:15px;font-weight:bold;border-radius:999px;">
+                      Receive Orchvate updates
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
             </td>
           </tr>
         </table>
@@ -1745,7 +1649,7 @@ appInsights.trackPageView();
      FOOTER
      ========================================= -->
 <tr>
-  <td bgcolor="#f6f9ff" class="px" style="padding-top:22px;padding-bottom:26px;border-top:1px solid #CAD3FF;">
+  <td bgcolor="#EEF4FF" class="px" style="padding-top:22px;padding-bottom:26px;border-top:1px solid #CAD3FF;">
 
     <p style="font-family:Arial,Helvetica,sans-serif;color:#01215d;font-size:15px;line-height:1.6;margin:0;text-align:center;">
       If you’d like to organise sensitisation workshops or explore coaching for your teams, email us at
@@ -1780,7 +1684,11 @@ appInsights.trackPageView();
       © Orchvate • 2026
     </p>
 
-
+    <p style="font-family:Arial,Helvetica,sans-serif;color:#01215d;font-size:14px;line-height:1.6;margin:10px 0 0;text-align:center;">
+      <a href="*|UPDATE_PROFILE|*" style="color:#01215d;text-decoration:underline;">Manage preferences</a> •
+      <a href="*|UNSUB|*" style="color:#01215d;text-decoration:underline;">Unsubscribe</a> •
+      <a href="*|ARCHIVE|*" style="color:#01215d;text-decoration:underline;">View in browser</a>
+    </p>
 
   </td>
 </tr>
@@ -1791,290 +1699,38 @@ appInsights.trackPageView();
       </td>
     </tr>
   </table>
-  <!-- Inquiry Modal Overlay -->
-  <div id="inquiryModal" class="modal-overlay">
-    <div class="modal-content" style="max-width: 550px;">
-      <span class="modal-close" id="closeInquiryModal">&times;</span>
-      
-      <div class="modal-logo">
-        <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/c2e0273b-0dab-d392-fe35-965293bee40c.png" alt="Orchvate Logo">
-      </div>
-
-      <h2 class="modal-title">Let’s start a conversation</h2>
-      <p class="modal-desc">
-        We work with employers, institutions, and non-profits to design practical, scalable neuroinclusive models. This form helps us understand what you’re exploring so we can follow up thoughtfully. There’s no obligation — just a conversation.
-      </p>
-
-      <div class="modal-notice">
-        When you submit this form, it will not automatically collect your details like name and email address unless you provide it yourself.
-      </div>
-
-      <form id="modalInquiryForm">
-        <div class="modal-form-group">
-          <label class="modal-label" for="inquiry-name">Name</label>
-          <input type="text" id="inquiry-name" class="modal-input" placeholder="Enter your answer">
-        </div>
-
-        <div class="modal-form-group">
-          <label class="modal-label" for="inquiry-org">Organisation / Institution</label>
-          <input type="text" id="inquiry-org" class="modal-input" placeholder="Enter your answer">
-        </div>
-
-        <div class="modal-form-group">
-          <label class="modal-label" for="inquiry-email">Email <span style="color:red">*</span></label>
-          <input type="email" id="inquiry-email" class="modal-input" placeholder="Please enter an email" required>
-        </div>
-
-        <div class="modal-form-group">
-          <label class="modal-label" for="inquiry-explore">What would you like to explore?</label>
-          <select id="inquiry-explore" class="modal-input" style="appearance: auto;">
-            <option value="Cohort / program sponsorship (CSR / foundation)">Cohort / program sponsorship (CSR / foundation)</option>
-            <option value="Neuroinclusive engagement models">Neuroinclusive engagement models</option>
-            <option value="Pilot / proof of concept">Pilot / proof of concept</option>
-            <option value="Partnership or collaboration">Partnership or collaboration</option>
-            <option value="General conversation">General conversation</option>
-          </select>
-        </div>
-
-        <div class="modal-form-group">
-          <label class="modal-label" for="inquiry-message">Anything you’d like us to know?</label>
-          <p style="font-size: 12px; color: #666; margin-bottom: 5px;">Context, questions, or what prompted you to reach out.</p>
-          <textarea id="inquiry-message" class="modal-input" style="min-height: 80px; resize: vertical;" placeholder="Enter your answer"></textarea>
-        </div>
-
-        <div class="modal-consent">
-          <input type="checkbox" id="inquiry-newsletter">
-          <label for="inquiry-newsletter" class="modal-consent-text">
-            We share reflections, case stories, and invitations to conversations.<br><strong>Yes, I’d like to receive occasional email updates from Orchvate</strong>
-          </label>
-        </div>
-
-        <button type="submit" class="modal-submit">Submit</button>
-      </form>
-
-      <!-- Success State -->
-      <div id="inquirySuccess" class="modal-success">
-        <div class="success-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-        </div>
-        <h2>Thank you.</h2>
-        <p>We've received your inquiry and will follow up thoughtfully.</p>
-        <div class="success-divider"></div>
-        <button class="modal-submit" onclick="closeInquiryModal()">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Newsletter Modal Overlay -->
-  <div id="newsletterModal" class="modal-overlay">
-    <div class="modal-content">
-      <span class="modal-close" id="closeModal">&times;</span>
-      
-      <div class="modal-logo">
-        <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/c2e0273b-0dab-d392-fe35-965293bee40c.png" alt="Orchvate Logo">
-      </div>
-
-      <h2 class="modal-title">Subscribe</h2>
-      <p class="modal-desc">
-        We share occasional updates on our work at Orchvate — across neuroinclusion, skilling, technology, and collaborations. If you’d like to receive these updates, you can subscribe below.
-      </p>
-
-      <div class="modal-notice">
-        When you submit this form, it will not automatically collect your details like name and email address unless you provide it yourself.
-      </div>
-
-      <form id="modalSubscriptionForm">
-        <div class="modal-form-group">
-          <label class="modal-label" for="modal-email">Email Address <span style="color:red">*</span></label>
-          <input type="email" id="modal-email" class="modal-input" placeholder="Please enter an email" required>
-        </div>
-
-        <div class="modal-form-group">
-          <label class="modal-label" for="modal-name">Name</label>
-          <input type="text" id="modal-name" class="modal-input" placeholder="Enter your answer">
-        </div>
-
-        <div class="modal-consent">
-          <input type="checkbox" id="modal-consent" required>
-          <label for="modal-consent" class="modal-consent-text">
-            We’ll only use your email to share Orchvate updates. You can unsubscribe anytime.<br><strong>Yes, keep me posted</strong>
-          </label>
-        </div>
-
-        <button type="submit" class="modal-submit">Subscribe / Submit</button>
-      </form>
-
-      <!-- Success State -->
-      <div id="modalSuccess" class="modal-success">
-        <div class="success-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-        </div>
-        <h2>Thanks for subscribing.</h2>
-        <p>You’re now part of our update circle.</p>
-        <div class="success-divider"></div>
-        <p>From time to time we share reflections, case stories, and systems insights from our work at Orchvate.</p>
-        <p>Thoughtful notes — not frequent emails.</p>
-        <button class="modal-submit" onclick="closeNewsletterModal()">Close</button>
-      </div>
-    </div>
-  </div>
-
-  <script src="form-handler.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Newsletter Modal Elements
-      const newsletterModal = document.getElementById('newsletterModal');
-      const openNewsletterBtns = document.querySelectorAll('.open-newsletter');
-      const closeNewsletterBtn = document.getElementById('closeModal');
-      const newsletterForm = document.getElementById('modalSubscriptionForm');
-      const newsletterSuccess = document.getElementById('modalSuccess');
-      
-      // Inquiry Modal Elements
-      const inquiryModal = document.getElementById('inquiryModal');
-      const openInquiryBtns = document.querySelectorAll('.open-inquiry');
-      const closeInquiryBtn = document.getElementById('closeInquiryModal');
-      const inquiryForm = document.getElementById('modalInquiryForm');
-      const inquirySuccess = document.getElementById('inquirySuccess');
-      const inquiryExploreSelect = document.getElementById('inquiry-explore');
-
-      // Shared close function
-      const closeModal = (modal) => {
-        modal.style.display = 'none';
-        document.body.style.overflow = '';
-      };
-
-      // Newsletter Modal Logic
-      openNewsletterBtns.forEach(btn => btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        newsletterForm.style.display = 'block';
-        newsletterSuccess.style.display = 'none';
-        newsletterModal.querySelector('.modal-title').style.display = 'block';
-        newsletterModal.querySelector('.modal-desc').style.display = 'block';
-        newsletterModal.querySelector('.modal-notice').style.display = 'block';
-        newsletterForm.reset();
-        
-        // Reset submt button state
-        const submitBtn = newsletterForm.querySelector('button[type="submit"]');
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Subscribe / Submit';
-        submitBtn.style.opacity = '1';
-        submitBtn.style.cursor = 'pointer';
-
-        newsletterModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }));
-
-      closeNewsletterBtn.addEventListener('click', () => closeModal(newsletterModal));
-
-      newsletterForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const email = document.getElementById('modal-email').value;
-        const name = document.getElementById('modal-name').value;
-        const submitBtn = this.querySelector('button[type="submit"]');
-
-        const success = await handleUpdatesSubmission(name, email, submitBtn);
-        if (success) {
-          newsletterForm.style.display = 'none';
-          newsletterModal.querySelector('.modal-title').style.display = 'none';
-          newsletterModal.querySelector('.modal-desc').style.display = 'none';
-          newsletterModal.querySelector('.modal-notice').style.display = 'none';
-          newsletterSuccess.style.display = 'block';
-        }
-      });
-
-      // Inquiry Modal Logic
-      openInquiryBtns.forEach(btn => btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const selectedOption = btn.getAttribute('data-inquiry');
-        
-        inquiryForm.style.display = 'block';
-        inquirySuccess.style.display = 'none';
-        inquiryModal.querySelector('.modal-title').style.display = 'block';
-        inquiryModal.querySelector('.modal-desc').style.display = 'block';
-        inquiryModal.querySelector('.modal-notice').style.display = 'block';
-        inquiryForm.reset();
-
-        // Reset submit button state
-        const submitBtn = inquiryForm.querySelector('button[type="submit"]');
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit';
-        submitBtn.style.opacity = '1';
-        submitBtn.style.cursor = 'pointer';
-
-        if (selectedOption) inquiryExploreSelect.value = selectedOption;
-        
-        inquiryModal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }));
-
-      closeInquiryBtn.addEventListener('click', () => closeModal(inquiryModal));
-
-      inquiryForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const fields = {
-          name:             document.getElementById('inquiry-name').value,
-          organisation:     document.getElementById('inquiry-org').value,
-          email:            document.getElementById('inquiry-email').value,
-          topic:            document.getElementById('inquiry-explore').value,
-          message:          document.getElementById('inquiry-message').value,
-          newsletter_opt_in: document.getElementById('inquiry-newsletter').checked,
-        };
-
-        const success = await handleInquirySubmission(fields, submitBtn);
-        if (success) {
-          inquiryForm.style.display = 'none';
-          inquiryModal.querySelector('.modal-title').style.display = 'none';
-          inquiryModal.querySelector('.modal-desc').style.display = 'none';
-          inquiryModal.querySelector('.modal-notice').style.display = 'none';
-          inquirySuccess.style.display = 'block';
-        }
-      });
-
-      // Global window click to close modals
-      window.addEventListener('click', (e) => {
-        if (e.target === newsletterModal) closeModal(newsletterModal);
-        if (e.target === inquiryModal) closeModal(inquiryModal);
-      });
-
-      // Video Hover Logic (existing - preserved)
-      const videoContainer = document.getElementById('hover-video');
-      if (videoContainer) {
-        const videoId = 'wG5fJqhksS0';
-        const originalInner = videoContainer.innerHTML;
-        let isPlaying = false;
-        const embedCode = `
-          <div style="position:relative; width:100%; padding-bottom:56.25%; border-radius:14px; overflow:hidden; background:#000;">
-            <iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>`;
-
-        videoContainer.addEventListener('mouseenter', () => {
-          if (!isPlaying) {
-            videoContainer.innerHTML = embedCode;
-            isPlaying = true;
-          }
-        });
-        videoContainer.addEventListener('mouseleave', () => {
-          if (isPlaying) {
-            videoContainer.innerHTML = originalInner;
-            isPlaying = false;
-          }
-        });
-      }
-    });
-
-    // Global functions for success state close buttons
-    window.closeNewsletterModal = function() {
-      const newsletterModal = document.getElementById('newsletterModal');
-      newsletterModal.style.display = 'none';
-      document.body.style.overflow = '';
-    };
-
-    window.closeInquiryModal = function() {
-      const inquiryModal = document.getElementById('inquiryModal');
-      inquiryModal.style.display = 'none';
-      document.body.style.overflow = '';
-    };
-  </script>
-</body>
+            <center>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="canspamBarWrapper" style="background-color:#FFFFFF; border-top:1px solid #E5E5E5;">
+                    <tr>
+                        <td align="center" valign="top" style="padding-top:20px; padding-bottom:20px;">
+                            <table border="0" cellpadding="0" cellspacing="0" id="canspamBar">
+                                <tr>
+                                    <td align="center" valign="top" style="color:#606060; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;">
+                                        This email was sent to <a href="mailto:*|EMAIL|*" target="_blank" style="color:#404040 !important;">*|EMAIL|*</a>
+                                        <br>
+                                        <a href="*|ABOUT_LIST|*" target="_blank" style="color:#404040 !important;"><em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UNSUB|*" style="color:#404040 !important;">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*" style="color:#404040 !important;">update subscription preferences</a>
+                                        <br>
+                                        *|LIST:ADDRESSLINE|*
+                                        <br>
+                                        <br>
+                                        *|REWARDS|*
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <style type="text/css">
+                    @media only screen and (max-width: 480px){
+                        table#canspamBar td{font-size:14px !important;}
+                        table#canspamBar td a{display:block !important; margin-top:10px !important;}
+                    }
+                </style>
+            </center></body>
 </html>
