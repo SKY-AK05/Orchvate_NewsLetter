@@ -1860,7 +1860,7 @@ appInsights.trackPageView();
         <h2>Thank you.</h2>
         <p>We've received your inquiry and will follow up thoughtfully.</p>
         <div class="success-divider"></div>
-        <button class="modal-submit" onclick="document.getElementById('inquiryModal').style.display='none'">Close</button>
+        <button class="modal-submit" onclick="closeInquiryModal()">Close</button>
       </div>
     </div>
   </div>
@@ -1914,7 +1914,7 @@ appInsights.trackPageView();
         <div class="success-divider"></div>
         <p>From time to time we share reflections, case stories, and systems insights from our work at Orchvate.</p>
         <p>Thoughtful notes — not frequent emails.</p>
-        <button class="modal-submit" onclick="document.getElementById('newsletterModal').style.display='none'">Close</button>
+        <button class="modal-submit" onclick="closeNewsletterModal()">Close</button>
       </div>
     </div>
   </div>
@@ -2062,6 +2062,19 @@ appInsights.trackPageView();
         });
       }
     });
+
+    // Global functions for success state close buttons
+    window.closeNewsletterModal = function() {
+      const newsletterModal = document.getElementById('newsletterModal');
+      newsletterModal.style.display = 'none';
+      document.body.style.overflow = '';
+    };
+
+    window.closeInquiryModal = function() {
+      const inquiryModal = document.getElementById('inquiryModal');
+      inquiryModal.style.display = 'none';
+      document.body.style.overflow = '';
+    };
   </script>
 </body>
 </html>

@@ -25,6 +25,7 @@ function optional(value) {
 
 // ─── Newsletter / Updates Subscription ────────────────────────────────────────
 async function handleUpdatesSubmission(name, email, submitButton) {
+  console.log('Starting newsletter submission...');
   const originalText = submitButton.textContent;
   setButtonLoading(submitButton, true);
 
@@ -34,6 +35,7 @@ async function handleUpdatesSubmission(name, email, submitButton) {
   };
 
   try {
+    console.log('Sending payload:', payload);
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 second timeout
 
@@ -45,17 +47,20 @@ async function handleUpdatesSubmission(name, email, submitButton) {
     });
     
     clearTimeout(timeoutId);
+    console.log('Response received:', response.status);
 
     if (!response.ok) {
       throw new Error(`Server returned HTTP ${response.status}`);
     }
 
     const result = await response.json();
+    console.log('Response data:', result);
 
     if (!result.success) {
       throw new Error("Server returned failure:" + result.message);
     }
 
+    console.log('Newsletter submission successful');
     // Reset button after successful submission
     setButtonLoading(submitButton, false, originalText);
     return true;
@@ -74,6 +79,7 @@ async function handleUpdatesSubmission(name, email, submitButton) {
 
 // ─── General Inquiry / Conversation Form ──────────────────────────────────────
 async function handleInquirySubmission(fields, submitButton) {
+  console.log('Starting inquiry submission...');
   const originalText = submitButton.textContent;
   setButtonLoading(submitButton, true);
 
@@ -88,6 +94,7 @@ async function handleInquirySubmission(fields, submitButton) {
   };
 
   try {
+    console.log('Sending payload:', payload);
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 second timeout
 
@@ -99,17 +106,20 @@ async function handleInquirySubmission(fields, submitButton) {
     });
     
     clearTimeout(timeoutId);
+    console.log('Response received:', response.status);
 
     if (!response.ok) {
       throw new Error(`Server returned HTTP ${response.status}`);
     }
 
     const result = await response.json();
+    console.log('Response data:', result);
 
     if (!result.success) {
       throw new Error("Server returned failure:" + result.message);
     }
 
+    console.log('Inquiry submission successful');
     // Reset button after successful submission
     setButtonLoading(submitButton, false, originalText);
     return true;
