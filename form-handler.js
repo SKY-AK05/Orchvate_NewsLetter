@@ -1,7 +1,9 @@
 
 // ─── API Routes (Vercel Serverless — Power Automate URLs stay server-side) ────
-const NEWSLETTER_API = "/api/submit-newsletter";
-const INQUIRY_API    = "/api/submit-inquiry";
+const API_BASE = "https://orchvate-news-letter.vercel.app/api";
+
+const NEWSLETTER_API = `${API_BASE}/submit-newsletter`;
+const INQUIRY_API    = `${API_BASE}/submit-inquiry`;
 
 // ─── Helper: button loading state ─────────────────────────────────────────────
 function setButtonLoading(button, isLoading, originalText) {
@@ -37,7 +39,7 @@ async function handleUpdatesSubmission(name, email, submitButton) {
   try {
     console.log('Sending payload:', payload);
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 second timeout
+    const timeoutId = setTimeout(() => controller.abort(), 12000); // 12 second timeout for Power Automate
 
     const response = await fetch(NEWSLETTER_API, {
       method: "POST",
@@ -53,11 +55,17 @@ async function handleUpdatesSubmission(name, email, submitButton) {
       throw new Error(`Server returned HTTP ${response.status}`);
     }
 
-    const result = await response.json();
+    let result = {};
+    try {
+      result = await response.json();
+    } catch (e) {
+      // Some APIs return empty response bodies (Power Automate)
+      result = { success: true };
+    }
     console.log('Response data:', result);
 
-    if (!result.success) {
-      throw new Error("Server returned failure:" + result.message);
+    if (result.success === false) {
+      throw new Error("Server returned failure: " + (result.message || "Unknown error"));
     }
 
     console.log('Newsletter submission successful');
@@ -96,7 +104,7 @@ async function handleInquirySubmission(fields, submitButton) {
   try {
     console.log('Sending payload:', payload);
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 8000); // 8 second timeout
+    const timeoutId = setTimeout(() => controller.abort(), 12000); // 12 second timeout for Power Automate
 
     const response = await fetch(INQUIRY_API, {
       method: "POST",
@@ -112,11 +120,17 @@ async function handleInquirySubmission(fields, submitButton) {
       throw new Error(`Server returned HTTP ${response.status}`);
     }
 
-    const result = await response.json();
+    let result = {};
+    try {
+      result = await response.json();
+    } catch (e) {
+      // Some APIs return empty response bodies (Power Automate)
+      result = { success: true };
+    }
     console.log('Response data:', result);
 
-    if (!result.success) {
-      throw new Error("Server returned failure:" + result.message);
+    if (result.success === false) {
+      throw new Error("Server returned failure: " + (result.message || "Unknown error"));
     }
 
     console.log('Inquiry submission successful');
