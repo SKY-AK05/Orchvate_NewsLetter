@@ -1,6 +1,6 @@
 
 // ─── API Routes (Vercel Serverless — Power Automate URLs stay server-side) ────
-const API_BASE = "https://orchvate-news-letter.vercel.app/";
+const API_BASE = "https://orchvate-news-letter.vercel.app/api";
 
 const NEWSLETTER_API = `${API_BASE}/submit-newsletter`;
 const INQUIRY_API    = `${API_BASE}/submit-inquiry`;
