@@ -45,8 +45,7 @@
       }
 
       #confirmation-view,
-      #error-view,
-      #already-verified-view {
+      #error-view {
         display: none;
       }
     </style>
@@ -103,25 +102,6 @@
           >
         </p>
       </div>
-
-      <!-- Already Verified View -->
-      <div id="already-verified-view">
-        <div class="checkmark">
-          <svg viewBox="0 0 52 52">
-            <polyline points="14 27 22 35 38 19" />
-          </svg>
-        </div>
-        <h1>Already Confirmed</h1>
-        <p>Your subscription is already confirmed and active. 🎉</p>
-        <div class="divider"></div>
-        <p>
-          You’re already part of our update circle and will receive our
-          occasional notes.
-        </p>
-        <p class="footer-text">
-          With gratitude,<br /><strong>The Orchvate Team</strong>
-        </p>
-      </div>
     </div>
 
     <script>
@@ -131,9 +111,6 @@
       const loadingView = document.getElementById("loading-view");
       const confirmationView = document.getElementById("confirmation-view");
       const errorView = document.getElementById("error-view");
-      const alreadyVerifiedView = document.getElementById(
-        "already-verified-view",
-      );
 
       // Your Power Automate Flow URL
       const POWER_AUTOMATE_URL =
@@ -169,15 +146,9 @@
               if (data && data.success === true) {
                 confirmationView.style.display = "block";
                 errorView.style.display = "none";
-                alreadyVerifiedView.style.display = "none";
-              } else if (data && data.status === "already_verified") {
-                alreadyVerifiedView.style.display = "block";
-                confirmationView.style.display = "none";
-                errorView.style.display = "none";
               } else {
                 console.error("Confirmation rejected by backend", data);
                 confirmationView.style.display = "none";
-                alreadyVerifiedView.style.display = "none";
                 errorView.style.display = "block";
               }
             })
