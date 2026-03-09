@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Start a Conversation | Orchvate</title>
+    <link rel="stylesheet" href="universal-styles.css" />
+    <style>
+      body {
+        background-color: #f6f9ff;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .form-page-container {
+        max-width: 600px;
+        margin: 60px auto;
+        width: 90%;
+        flex-grow: 1;
+      }
+
+      .logo-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .logo-header img {
+        width: 150px;
+        margin: 0 auto;
+      }
+
+      .form-card {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e3ecff;
+      }
+
+      .form-title {
+        font-size: 32px;
+        color: #150e56;
+        font-weight: bold;
+        margin-bottom: 12px;
+      }
+
+      .form-description {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 24px;
+      }
+
+      .notice-text {
+        background-color: #f4f7fa;
+        padding: 16px;
+        border-left: 4px solid #06907b;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #666;
+        margin-bottom: 32px;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      .form-label {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        color: #150e56;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .required-star {
+        color: #cf222e;
+        margin-left: 2px;
+      }
+
+      .form-input,
+      .form-select,
+      .form-textarea {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 16px;
+        border: 1px solid #cad3ff;
+        border-radius: 8px;
+        font-family: inherit;
+        color: #111111;
+        outline: none;
+        transition: border-color 0.2s;
+        box-sizing: border-box;
+      }
+
+      .form-input:focus,
+      .form-select:focus,
+      .form-textarea:focus {
+        border-color: #150e56;
+      }
+
+      .form-textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .field-description {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 8px;
+        line-height: 1.4;
+      }
+
+      .consent-section {
+        margin-top: 32px;
+        padding: 20px;
+        background: #f9faff;
+        border-radius: 12px;
+        border: 1px solid #eef1ff;
+      }
+
+      .checkbox-group {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        cursor: pointer;
+      }
+
+      .checkbox-group input {
+        margin-top: 3px;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+      }
+
+      .checkbox-label {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.5;
+      }
+
+      .submit-button {
+        background-color: #150e56;
+        color: #ffffff;
+        border: none;
+        border-radius: 30px;
+        padding: 16px 40px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        margin-top: 32px;
+        font-family: inherit;
+        transition:
+          background-color 0.2s,
+          transform 0.1s;
+      }
+
+      .submit-button:hover {
+        background-color: #01215d;
+      }
+
+      .submit-button:active {
+        transform: scale(0.98);
+      }
+
+      .footer {
+        text-align: center;
+        padding: 40px 20px;
+        font-size: 14px;
+        color: #150e56;
+        font-weight: bold;
+      }
+
+      @media (max-width: 480px) {
+        .form-card {
+          padding: 24px;
+        }
+        .form-title {
+          font-size: 26px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-page-container">
+      <div class="logo-header">
+        <a href="index.html">
+          <img
+            src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/c2e0273b-0dab-d392-fe35-965293bee40c.png"
+            alt="Orchvate Logo"
+          />
+        </a>
+      </div>
+
+      <div class="form-card">
+        <h1 class="form-title">Let’s start a conversation</h1>
+        <p class="form-description">
+          We work with employers, institutions, and non-profits to design
+          practical, scalable neuroinclusive models. This form helps us
+          understand what you’re exploring so we can follow up thoughtfully.
+          There’s no obligation — just a conversation.
+        </p>
+
+        <div class="notice-text">
+          When you submit this form, it will not automatically collect your
+          details like name and email address unless you provide it yourself.
+        </div>
+
+        <form id="inquiryForm">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-input"
+              placeholder="Enter your answer"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="org"
+              >Organisation / Institution</label
+            >
+            <input
+              type="text"
+              id="org"
+              name="org"
+              class="form-input"
+              placeholder="Enter your answer"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email"
+              >Email <span class="required-star">*</span></label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="Please enter an email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="explore"
+              >What would you like to explore?</label
+            >
+            <select id="explore" name="explore" class="form-select">
+              <option value="" disabled selected>Select an option</option>
+              <option value="Cohort / program sponsorship (CSR / foundation)">
+                Cohort / program sponsorship (CSR / foundation)
+              </option>
+              <option value="Neuroinclusive engagement models">
+                Neuroinclusive engagement models
+              </option>
+              <option value="Pilot / proof of concept">
+                Pilot / proof of concept
+              </option>
+              <option value="Partnership or collaboration">
+                Partnership or collaboration
+              </option>
+              <option value="General conversation">General conversation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="message"
+              >Anything you’d like us to know?</label
+            >
+            <div class="field-description">
+              Context, questions, or what prompted you to reach out.
+            </div>
+            <textarea
+              id="message"
+              name="message"
+              class="form-textarea"
+              placeholder="Enter your answer"
+            ></textarea>
+          </div>
+
+          <div class="consent-section">
+            <label class="checkbox-group">
+              <input type="checkbox" id="subscribe" name="subscribe" />
+              <span class="checkbox-label">
+                We share reflections, case stories, and invitations to
+                conversations. You can unsubscribe anytime.<br /><strong
+                  >Yes, I’d like to receive occasional email updates from
+                  Orchvate</strong
+                >
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" class="submit-button">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">&copy; Orchvate • 2026</div>
+
+    <script src="form-handler.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("inquiryForm");
+        const exploreSelect = document.getElementById("explore");
+
+        // URL Parameter handling for pre-selection
+        const urlParams = new URLSearchParams(window.location.search);
+        const preSelect = urlParams.get("inquiry");
+        const sourceParam = urlParams.get("source") || "Website"; // 'Email' when opened from email
+        if (preSelect) {
+          // Find option with matching text or value
+          for (let i = 0; i < exploreSelect.options.length; i++) {
+            if (
+              exploreSelect.options[i].value === preSelect ||
+              exploreSelect.options[i].text === preSelect
+            ) {
+              exploreSelect.selectedIndex = i;
+              break;
+            }
+          }
+        }
+
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const fields = {
+            name: document.getElementById("name").value,
+            organisation: document.getElementById("org").value,
+            email: document.getElementById("email").value,
+            topic: document.getElementById("explore").value,
+            message: document.getElementById("message").value,
+            newsletter_opt_in: document.getElementById("subscribe").checked,
+            source_override: sourceParam, // pass through to handler
+          };
+
+          const success = await handleInquirySubmission(fields, submitBtn);
+
+          if (success) {
+            window.location.href = "message_received.html";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

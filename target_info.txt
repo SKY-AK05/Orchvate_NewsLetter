@@ -1,0 +1,15 @@
+﻿* remote target
+  Fetch URL: https://github.com/SKY-AK05/Orchvate_NewsLetter.git
+  Push  URL: https://github.com/SKY-AK05/Orchvate_NewsLetter.git
+  HEAD branch: main
+  Remote branches:
+    Stage            tracked
+    Stage2           tracked
+    main             tracked
+    orchvate-updates tracked
+    stage3           tracked
+  Local refs configured for 'git push':
+    Stage            pushes to Stage            (up to date)
+    Stage2           pushes to Stage2           (fast-forwardable)
+    main             pushes to main             (local out of date)
+    orchvate-updates pushes to orchvate-updates (up to date)
