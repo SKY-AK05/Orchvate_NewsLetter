@@ -104,56 +104,66 @@
       </div>
     </div>
 
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      const token = params.get("token");
+<script>
+const params = new URLSearchParams(window.location.search);
+const token = params.get("token");
 
-      const loadingView = document.getElementById("loading-view");
-      const confirmationView = document.getElementById("confirmation-view");
-      const errorView = document.getElementById("error-view");
+const loadingView = document.getElementById("loading-view");
+const confirmationView = document.getElementById("confirmation-view");
+const errorView = document.getElementById("error-view");
 
-      // Placeholder for your actual Power Automate URL
-      const POWER_AUTOMATE_URL = "https://defaultea77fe37fd2c429487c38746bce662.5a.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/7936273c9e8e426fb118e40e67d674b7/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=1634ckVzZt8SMQT160JqdFUtmWLGfjeNqrzpgnTlBd4"
-        
-      let requestSent = false;
+// Your Power Automate Flow URL
+const POWER_AUTOMATE_URL =
+"https://defaultea77fe37fd2c429487c38746bce662.5a.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/7936273c9e8e426fb118e40e67d674b7/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=1634ckVzZt8SMQT160JqdFUtmWLGfjeNqrzpgnTlBd4";
 
-      // 1. Validate token properly
-      if (!token || token.trim() === "") {
-        loadingView.style.display = "none";
-        errorView.style.display = "block";
-        console.error("Invalid or missing token");
+let requestSent = false;
+
+// Validate token
+if (!token || token.trim() === "") {
+  loadingView.style.display = "none";
+  errorView.style.display = "block";
+  console.error("Invalid or missing token");
+} else {
+
+  if (!requestSent) {
+    requestSent = true;
+
+    fetch(POWER_AUTOMATE_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        token: token
+      })
+    })
+    .then((res) => {
+      if (!res.ok) throw new Error("Server error");
+      return res.json().catch(() => ({ success: false }));
+    })
+    .then((data) => {
+
+      loadingView.style.display = "none";
+
+      if (data && data.success === true) {
+        confirmationView.style.display = "block";
+        errorView.style.display = "none";
       } else {
-        // 4. Protect against multiple clicks/executions
-        if (!requestSent) {
-          requestSent = true;
-
-          // 3. Prevent caching with cache: "no-store"
-          fetch(POWER_AUTOMATE_URL + "&token=" + token, {
-            method: "GET",
-            cache: "no-store",
-          })
-            .then((res) => {
-              if (!res.ok) throw new Error("Server error");
-              return res.json().catch(() => ({ success: false }));
-            })
-            .then((data) => {
-              loadingView.style.display = "none";
-
-              // 2. Handle backend response correctly
-              if (data && data.success === true) {
-                confirmationView.style.display = "block";
-              } else {
-                console.error("Confirmation rejected by backend", data);
-                errorView.style.display = "block";
-              }
-            })
-            .catch((err) => {
-              console.error("Confirmation error:", err);
-              loadingView.style.display = "none";
-              errorView.style.display = "block";
-            });
-        }
+        console.error("Confirmation rejected by backend", data);
+        confirmationView.style.display = "none";
+        errorView.style.display = "block";
       }
-    </script>
+
+    })
+    .catch((err) => {
+      console.error("Confirmation error:", err);
+      loadingView.style.display = "none";
+      confirmationView.style.display = "none";
+      errorView.style.display = "block";
+    });
+
+  }
+}
+</script>
   </body>
 </html>
