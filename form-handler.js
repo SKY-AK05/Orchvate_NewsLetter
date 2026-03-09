@@ -1,9 +1,10 @@
 
 // ─── API Routes (Vercel Serverless — Power Automate URLs stay server-side) ────
-const API_BASE = "https://YOUR-VERCEL-PROJECT.vercel.app/api";
+const API_BASE = "https://orchvate-news-letter.vercel.app/";
 
 const NEWSLETTER_API = `${API_BASE}/submit-newsletter`;
 const INQUIRY_API    = `${API_BASE}/submit-inquiry`;
+const UNSUBSCRIBE_API = `${API_BASE}/unsubscribe`;
 
 // ─── Helper: button loading state ─────────────────────────────────────────────
 function setButtonLoading(button, isLoading, originalText) {
@@ -140,6 +141,61 @@ async function handleInquirySubmission(fields, submitButton) {
 
   } catch (error) {
     console.error("Inquiry submission failed:", error);
+    if (error.name === 'AbortError') {
+       alert("Request timed out. Please try again.");
+    } else {
+       alert("Something went wrong. Please try again later.");
+    }
+    setButtonLoading(submitButton, false, originalText);
+    return false;
+  }
+}
+
+// ─── Unsubscribe Submission ───────────────────────────────────────────────────
+async function handleUnsubscribeSubmission(name, email, reason, submitButton) {
+  console.log('Starting unsubscribe submission...');
+  const originalText = submitButton.textContent;
+  setButtonLoading(submitButton, true);
+
+  const payload = {
+    name:   optional(name),
+    email:  optional(email),
+    reason: optional(reason),
+  };
+
+
+  try {
+    console.log('Sending payload:', payload);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 12000);
+
+    const response = await fetch(UNSUBSCRIBE_API, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+      signal: controller.signal
+    });
+    
+    clearTimeout(timeoutId);
+    console.log('Response received:', response.status);
+
+    if (!response.ok) {
+      throw new Error(`Server returned HTTP ${response.status}`);
+    }
+
+    let result = {};
+    try {
+      result = await response.json();
+    } catch (e) {
+      result = { success: true };
+    }
+
+    console.log('Unsubscribe submission successful');
+    setButtonLoading(submitButton, false, originalText);
+    return true;
+
+  } catch (error) {
+    console.error("Unsubscribe submission failed:", error);
     if (error.name === 'AbortError') {
        alert("Request timed out. Please try again.");
     } else {

@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unsubscribe | Orchvate</title>
+    <link rel="stylesheet" href="universal-styles.css" />
+    <style>
+      body {
+        background-color: #f6f9ff;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .form-page-container {
+        max-width: 600px;
+        margin: 60px auto;
+        width: 90%;
+        flex-grow: 1;
+      }
+
+      .logo-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .logo-header img {
+        width: 150px;
+        margin: 0 auto;
+      }
+
+      .form-card {
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e3ecff;
+      }
+
+      .form-title {
+        font-size: 32px;
+        color: #150e56;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .form-description {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #111111;
+        margin-bottom: 24px;
+      }
+
+      .notice-text {
+        background-color: #f4f7fa;
+        padding: 16px;
+        border-left: 4px solid #cf222e;
+        border-radius: 4px;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #666;
+        margin-bottom: 32px;
+      }
+
+      .form-group {
+        margin-bottom: 24px;
+      }
+
+      .form-label {
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        color: #150e56;
+        margin-bottom: 8px;
+      }
+
+      .required-star {
+        color: #cf222e;
+        margin-left: 2px;
+      }
+
+      .form-input {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 16px;
+        border: 1px solid #cad3ff;
+        border-radius: 6px;
+        font-family: inherit;
+        color: #111111;
+        outline: none;
+        transition: border-color 0.2s;
+      }
+
+      .form-input:focus {
+        border-color: #150e56;
+      }
+
+      .form-input.invalid {
+        border-color: #cf222e;
+        background-color: #fff8f8;
+      }
+
+      .error-message {
+        color: #cf222e;
+        font-size: 13px;
+        margin-top: 4px;
+        display: none;
+      }
+
+      .form-input.invalid + .error-message {
+        display: block;
+      }
+
+      .form-input::placeholder {
+        color: #999;
+      }
+
+      .submit-button {
+        background-color: #150e56;
+        color: #ffffff;
+        border: none;
+        border-radius: 24px;
+        padding: 14px 32px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        display: block;
+        width: fit-content;
+        margin-top: 40px;
+        font-family: inherit;
+        transition:
+          background-color 0.2s,
+          transform 0.1s;
+      }
+
+      .submit-button:hover {
+        background-color: #1a126b;
+      }
+
+      .submit-button:active {
+        transform: scale(0.98);
+      }
+
+      .footer {
+        text-align: center;
+        padding: 40px 20px;
+        font-size: 14px;
+        color: #666;
+      }
+
+      @media (max-width: 480px) {
+        .form-card {
+          padding: 24px;
+        }
+        .form-title {
+          font-size: 26px;
+        }
+        .submit-button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-page-container">
+      <div class="logo-header">
+        <a href="index.html">
+          <img
+            src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/c2e0273b-0dab-d392-fe35-965293bee40c.png"
+            alt="Orchvate Logo"
+          />
+        </a>
+      </div>
+
+      <div class="form-card">
+        <h1 class="form-title">Unsubscribe</h1>
+        <p class="form-description">
+          We're sorry to see you go. If you'd like to stop receiving updates
+          from Orchvate, please confirm your email address below.
+        </p>
+
+        <div class="notice-text">
+          Once you unsubscribe, you will no longer receive our occasional
+          updates on neuroinclusion, skilling, and technology.
+        </div>
+
+        <form id="unsubscribeForm">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-input"
+              placeholder="Enter your name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email"
+              >Email Address <span class="required-star">*</span></label
+            >
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="Please enter your email"
+              required
+            />
+            <span id="email-error" class="error-message"
+              >Please enter a valid email address.</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="reason"
+              >Why are you unsubscribing? (Optional)</label
+            >
+            <textarea
+              id="reason"
+              name="reason"
+              class="form-input"
+              style="min-height: 80px; resize: vertical"
+              placeholder="Tell us how we can improve"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="submit-button">
+            Confirm Unsubscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer">&copy; 2026 Orchvate. All rights reserved.</div>
+
+    <script src="form-handler.js"></script>
+    <script>
+      const form = document.getElementById("unsubscribeForm");
+      const nameInput = document.getElementById("name");
+      const emailInput = document.getElementById("email");
+      const reasonInput = document.getElementById("reason");
+      const emailError = document.getElementById("email-error");
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      const validateEmail = (email) => {
+        return String(email)
+          .toLowerCase()
+          .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+          );
+      };
+
+      emailInput.addEventListener("input", function () {
+        if (validateEmail(this.value) || this.value === "") {
+          this.classList.remove("invalid");
+          emailError.style.display = "none";
+        }
+      });
+
+      emailInput.addEventListener("blur", function () {
+        if (!validateEmail(this.value) && this.value !== "") {
+          this.classList.add("invalid");
+          emailError.style.display = "block";
+        }
+      });
+
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        if (!validateEmail(emailInput.value)) {
+          emailInput.classList.add("invalid");
+          emailError.style.display = "block";
+          emailInput.focus();
+          return;
+        }
+
+        const success = await handleUnsubscribeSubmission(
+          nameInput.value,
+          emailInput.value,
+          reasonInput.value,
+          submitBtn,
+        );
+
+        if (success) {
+          alert("You have been successfully unsubscribed.");
+          window.location.href = "index.html";
+        }
+      });
+    </script>
+  </body>
+</html>
