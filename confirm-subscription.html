@@ -128,7 +128,7 @@
           requestSent = true;
 
           // 3. Prevent caching with cache: "no-store"
-          fetch(POWER_AUTOMATE_URL + "?token=" + token, {
+          fetch(POWER_AUTOMATE_URL + "&token=" + token, {
             method: "GET",
             cache: "no-store",
           })
