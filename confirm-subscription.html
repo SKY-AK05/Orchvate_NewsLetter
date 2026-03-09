@@ -45,6 +45,7 @@
       }
 
       #confirmation-view,
+      #already-verified-view,
       #error-view {
         display: none;
       }
@@ -83,6 +84,25 @@
         </p>
       </div>
 
+      <!-- Already Verified View -->
+      <div id="already-verified-view">
+        <div class="checkmark">
+          <svg viewBox="0 0 52 52">
+            <polyline points="14 27 22 35 38 19" />
+          </svg>
+        </div>
+        <h1>Subscription Already Confirmed</h1>
+        <p>You're already part of our update circle. 🎉</p>
+        <div class="divider"></div>
+        <p>
+          From time to time we share reflections, case stories, and systems
+          insights from our work at Orchvate.
+        </p>
+        <p class="footer-text">
+          With gratitude,<br /><strong>The Orchvate Team</strong>
+        </p>
+      </div>
+
       <!-- Error View -->
       <div id="error-view">
         <div class="error-icon">✕</div>
@@ -110,6 +130,7 @@ const token = params.get("token");
 
 const loadingView = document.getElementById("loading-view");
 const confirmationView = document.getElementById("confirmation-view");
+const alreadyVerifiedView = document.getElementById("already-verified-view");
 const errorView = document.getElementById("error-view");
 
 // Your Power Automate Flow URL
@@ -148,9 +169,15 @@ if (!token || token.trim() === "") {
       if (data && data.success === true) {
         confirmationView.style.display = "block";
         errorView.style.display = "none";
+        alreadyVerifiedView.style.display = "none";
+      } else if (data && data.status === "already_verified") {
+        confirmationView.style.display = "none";
+        errorView.style.display = "none";
+        alreadyVerifiedView.style.display = "block";
       } else {
         console.error("Confirmation rejected by backend", data);
         confirmationView.style.display = "none";
+        alreadyVerifiedView.style.display = "none";
         errorView.style.display = "block";
       }
     })
@@ -158,6 +185,7 @@ if (!token || token.trim() === "") {
       console.error("Confirmation error:", err);
       loadingView.style.display = "none";
       confirmationView.style.display = "none";
+      alreadyVerifiedView.style.display = "none";
       errorView.style.display = "block";
     });
 
