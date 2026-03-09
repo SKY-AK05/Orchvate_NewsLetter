@@ -45,7 +45,8 @@
       }
 
       #confirmation-view,
-      #error-view {
+      #error-view,
+      #already-verified-view {
         display: none;
       }
     </style>
@@ -102,6 +103,25 @@
           >
         </p>
       </div>
+
+      <!-- Already Verified View -->
+      <div id="already-verified-view">
+        <div class="checkmark">
+          <svg viewBox="0 0 52 52">
+            <polyline points="14 27 22 35 38 19" />
+          </svg>
+        </div>
+        <h1>Already Confirmed</h1>
+        <p>Your subscription is already confirmed and active. 🎉</p>
+        <div class="divider"></div>
+        <p>
+          You’re already part of our update circle and will receive our
+          occasional notes.
+        </p>
+        <p class="footer-text">
+          With gratitude,<br /><strong>The Orchvate Team</strong>
+        </p>
+      </div>
     </div>
 
     <script>
@@ -111,26 +131,33 @@
       const loadingView = document.getElementById("loading-view");
       const confirmationView = document.getElementById("confirmation-view");
       const errorView = document.getElementById("error-view");
+      const alreadyVerifiedView = document.getElementById(
+        "already-verified-view",
+      );
 
-      // Placeholder for your actual Power Automate URL
-      const POWER_AUTOMATE_URL = "YOUR_POWER_AUTOMATE_FLOW_URL";
+      // Your Power Automate Flow URL
+      const POWER_AUTOMATE_URL =
+        "https://defaultea77fe37fd2c429487c38746bce662.5a.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/7936273c9e8e426fb118e40e67d674b7/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=1634ckVzZt8SMQT160JqdFUtmWLGfjeNqrzpgnTlBd4";
 
       let requestSent = false;
 
-      // 1. Validate token properly
+      // Validate token
       if (!token || token.trim() === "") {
         loadingView.style.display = "none";
         errorView.style.display = "block";
         console.error("Invalid or missing token");
       } else {
-        // 4. Protect against multiple clicks/executions
         if (!requestSent) {
           requestSent = true;
 
-          // 3. Prevent caching with cache: "no-store"
-          fetch(POWER_AUTOMATE_URL + "?token=" + token, {
-            method: "GET",
-            cache: "no-store",
+          fetch(POWER_AUTOMATE_URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              token: token,
+            }),
           })
             .then((res) => {
               if (!res.ok) throw new Error("Server error");
@@ -139,17 +166,25 @@
             .then((data) => {
               loadingView.style.display = "none";
 
-              // 2. Handle backend response correctly
               if (data && data.success === true) {
                 confirmationView.style.display = "block";
+                errorView.style.display = "none";
+                alreadyVerifiedView.style.display = "none";
+              } else if (data && data.status === "already_verified") {
+                alreadyVerifiedView.style.display = "block";
+                confirmationView.style.display = "none";
+                errorView.style.display = "none";
               } else {
                 console.error("Confirmation rejected by backend", data);
+                confirmationView.style.display = "none";
+                alreadyVerifiedView.style.display = "none";
                 errorView.style.display = "block";
               }
             })
             .catch((err) => {
               console.error("Confirmation error:", err);
               loadingView.style.display = "none";
+              confirmationView.style.display = "none";
               errorView.style.display = "block";
             });
         }
