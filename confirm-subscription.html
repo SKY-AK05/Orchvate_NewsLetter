@@ -104,62 +104,65 @@
       </div>
     </div>
 
-    <script>
-      const params = new URLSearchParams(window.location.search);
-      const token = params.get("token");
+<script>
+const params = new URLSearchParams(window.location.search);
+const token = params.get("token");
 
-      const loadingView = document.getElementById("loading-view");
-      const confirmationView = document.getElementById("confirmation-view");
-      const errorView = document.getElementById("error-view");
+const loadingView = document.getElementById("loading-view");
+const confirmationView = document.getElementById("confirmation-view");
+const errorView = document.getElementById("error-view");
 
-      // Your Power Automate Flow URL
-      const POWER_AUTOMATE_URL =
-        "https://defaultea77fe37fd2c429487c38746bce662.5a.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/7936273c9e8e426fb118e40e67d674b7/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=1634ckVzZt8SMQT160JqdFUtmWLGfjeNqrzpgnTlBd4";
+// Your Power Automate Flow URL
+const POWER_AUTOMATE_URL =
+"https://defaultea77fe37fd2c429487c38746bce662.5a.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/7936273c9e8e426fb118e40e67d674b7/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=1634ckVzZt8SMQT160JqdFUtmWLGfjeNqrzpgnTlBd4";
 
-      let requestSent = false;
+let requestSent = false;
 
-      // Validate token
-      if (!token || token.trim() === "") {
-        loadingView.style.display = "none";
-        errorView.style.display = "block";
-        console.error("Invalid or missing token");
+// Validate token
+if (!token || token.trim() === "") {
+  loadingView.style.display = "none";
+  errorView.style.display = "block";
+  console.error("Invalid or missing token");
+} else {
+
+  if (!requestSent) {
+    requestSent = true;
+
+    fetch(POWER_AUTOMATE_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        token: token
+      })
+    })
+    .then((res) => {
+      if (!res.ok) throw new Error("Server error");
+      return res.json().catch(() => ({ success: false }));
+    })
+    .then((data) => {
+
+      loadingView.style.display = "none";
+
+      if (data && data.success === true) {
+        confirmationView.style.display = "block";
+        errorView.style.display = "none";
       } else {
-        if (!requestSent) {
-          requestSent = true;
-
-          fetch(POWER_AUTOMATE_URL, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              token: token,
-            }),
-          })
-            .then((res) => {
-              if (!res.ok) throw new Error("Server error");
-              return res.json().catch(() => ({ success: false }));
-            })
-            .then((data) => {
-              loadingView.style.display = "none";
-
-              if (data && data.success === true) {
-                confirmationView.style.display = "block";
-                errorView.style.display = "none";
-              } else {
-                console.error("Confirmation rejected by backend", data);
-                confirmationView.style.display = "none";
-                errorView.style.display = "block";
-              }
-            })
-            .catch((err) => {
-              console.error("Confirmation error:", err);
-              loadingView.style.display = "none";
-              confirmationView.style.display = "none";
-              errorView.style.display = "block";
-            });
-        }
+        console.error("Confirmation rejected by backend", data);
+        confirmationView.style.display = "none";
+        errorView.style.display = "block";
       }
-    </script>
+    })
+    .catch((err) => {
+      console.error("Confirmation error:", err);
+      loadingView.style.display = "none";
+      confirmationView.style.display = "none";
+      errorView.style.display = "block";
+    });
+
+  }
+}
+</script>
   </body>
 </html>
