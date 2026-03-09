@@ -145,6 +145,59 @@
         transform: scale(0.98);
       }
 
+      /* Success State Styles */
+      .success-state {
+        display: none;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        background-color: #06907b;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+      }
+
+      .success-icon svg {
+        width: 44px;
+        height: 44px;
+        fill: #ffffff;
+      }
+
+      .success-title {
+        font-size: 28px;
+        color: #150e56;
+        font-weight: bold;
+        margin-bottom: 16px;
+      }
+
+      .success-text {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #111111;
+        margin-bottom: 32px;
+      }
+
+      .back-button {
+        display: inline-block;
+        background-color: #150e56;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 12px 32px;
+        border-radius: 24px;
+        font-weight: bold;
+        transition: background-color 0.2s;
+      }
+
+      .back-button:hover {
+        background-color: #1a126b;
+      }
+
       .footer {
         text-align: center;
         padding: 40px 20px;
@@ -235,6 +288,21 @@
             Confirm Unsubscribe
           </button>
         </form>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-state">
+          <div class="success-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+            </svg>
+          </div>
+          <h2 class="success-title">Successfully Unsubscribed</h2>
+          <p class="success-text">
+            You have been removed from our mailing list. You will no longer
+            receive occasional updates from Orchvate.
+          </p>
+          <a href="index.html" class="back-button">Return to Homepage</a>
+        </div>
       </div>
     </div>
 
@@ -243,6 +311,11 @@
     <script src="form-handler.js"></script>
     <script>
       const form = document.getElementById("unsubscribeForm");
+      const successMessage = document.getElementById("successMessage");
+      const formTitle = document.querySelector(".form-title");
+      const formDesc = document.querySelector(".form-description");
+      const noticeText = document.querySelector(".notice-text");
+
       const nameInput = document.getElementById("name");
       const emailInput = document.getElementById("email");
       const reasonInput = document.getElementById("reason");
@@ -289,8 +362,14 @@
         );
 
         if (success) {
-          alert("You have been successfully unsubscribed.");
-          window.location.href = "index.html";
+          // Hide form and related text
+          form.style.display = "none";
+          formTitle.style.display = "none";
+          formDesc.style.display = "none";
+          noticeText.style.display = "none";
+
+          // Show success message
+          successMessage.style.display = "block";
         }
       });
     </script>
