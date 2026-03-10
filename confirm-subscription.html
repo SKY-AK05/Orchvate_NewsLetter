@@ -151,8 +151,8 @@ if (!token || token.trim() === "") {
     fetch(VERIFY_URL, {
       method: "POST",
       headers: {
-        "apikey": "sb_publishable_lWJIG_mLNf6sEPjezs-cZQ_QJ_hfljx",
-        "Authorization": "Bearer sb_publishable_lWJIG_mLNf6sEPjezs-cZQ_QJ_hfljx",
+        "apikey": "sb_publishable_lWIJG_mLNf6sEPjezs-cZQ_QJ_hfljx",
+        "Authorization": "Bearer sb_publishable_lWIJG_mLNf6sEPjezs-cZQ_QJ_hfljx",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -165,22 +165,22 @@ if (!token || token.trim() === "") {
     })
     .then((data) => {
 
-      loadingView.style.display = "none";
+      setTimeout(() => {
 
-      if (data && data.success === true) {
-        confirmationView.style.display = "block";
-        errorView.style.display = "none";
-        alreadyVerifiedView.style.display = "none";
-      } else if (data && data.status === "already_verified") {
-        confirmationView.style.display = "none";
-        errorView.style.display = "none";
-        alreadyVerifiedView.style.display = "block";
-      } else {
-        console.error("Confirmation rejected by backend", data);
-        confirmationView.style.display = "none";
-        alreadyVerifiedView.style.display = "none";
-        errorView.style.display = "block";
-      }
+        loadingView.style.display = "none";
+
+        if (data && data.success === true) {
+          confirmationView.style.display = "block";
+        } 
+        else if (data && data.status === "already_verified") {
+          alreadyVerifiedView.style.display = "block";
+        } 
+        else {
+          console.error("Confirmation rejected by backend", data);
+          errorView.style.display = "block";
+        }
+
+      }, 3000);
     })
     .catch((err) => {
       console.error("Confirmation error:", err);
