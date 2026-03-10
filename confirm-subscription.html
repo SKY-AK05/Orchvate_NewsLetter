@@ -133,9 +133,8 @@ const confirmationView = document.getElementById("confirmation-view");
 const alreadyVerifiedView = document.getElementById("already-verified-view");
 const errorView = document.getElementById("error-view");
 
-// Your Power Automate Flow URL
-const POWER_AUTOMATE_URL =
-"https://defaultea77fe37fd2c429487c38746bce662.5a.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/7936273c9e8e426fb118e40e67d674b7/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=1634ckVzZt8SMQT160JqdFUtmWLGfjeNqrzpgnTlBd4";
+const VERIFY_URL =
+"https://nnilgrsthdccnnbcrcyc.supabase.co/rest/v1/rpc/verify_newsletter_token";
 
 let requestSent = false;
 
@@ -149,13 +148,15 @@ if (!token || token.trim() === "") {
   if (!requestSent) {
     requestSent = true;
 
-    fetch(POWER_AUTOMATE_URL, {
+    fetch(VERIFY_URL, {
       method: "POST",
       headers: {
+        "apikey": "sb_publishable_lWJIG_mLNf6sEPjezs-cZQ_QJ_hfljx",
+        "Authorization": "Bearer sb_publishable_lWJIG_mLNf6sEPjezs-cZQ_QJ_hfljx",
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        token: token
+        input_token: token
       })
     })
     .then((res) => {
