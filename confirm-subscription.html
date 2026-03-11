@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm Subscription | Orchvate - Updated with Supabase</title>
+    <link rel="stylesheet" href="universal-styles.css" />
+    <style>
+      .status-card {
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid rgba(21, 14, 86, 0.1);
+        border-top: 4px solid #150e56;
+        border-radius: 50%;
+        margin: 0 auto 30px;
+        animation: spin 1s linear infinite;
+      }
+
+      .error-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: #cf222e;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      #confirmation-view,
+      #already-verified-view,
+      #error-view {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="thank-you-page">
+    <div class="thank-you-container status-card">
+      <img
+        src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/c2e0273b-0dab-d392-fe35-965293bee40c.png"
+        alt="Orchvate"
+      />
+
+      <!-- Loading View -->
+      <div id="loading-view">
+        <div class="spinner"></div>
+        <h1>Confirming your subscription...</h1>
+        <p>Please wait a moment while we process your request.</p>
+      </div>
+
+      <!-- Success View -->
+      <div id="confirmation-view">
+        <div class="checkmark">
+          <svg viewBox="0 0 52 52">
+            <polyline points="14 27 22 35 38 19" />
+          </svg>
+        </div>
+        <h1>Subscription Confirmed</h1>
+        <p>You’re now part of our update circle. 🎉</p>
+        <div class="divider"></div>
+        <p>
+          From time to time we share reflections, case stories, and systems
+          insights from our work at Orchvate.
+        </p>
+        <p class="footer-text">
+          With gratitude,<br /><strong>The Orchvate Team</strong>
+        </p>
+      </div>
+
+      <!-- Already Verified View -->
+      <div id="already-verified-view">
+        <div class="checkmark">
+          <svg viewBox="0 0 52 52">
+            <polyline points="14 27 22 35 38 19" />
+          </svg>
+        </div>
+        <h1>Subscription Already Confirmed</h1>
+        <p>You're already part of our update circle. 🎉</p>
+        <div class="divider"></div>
+        <p>
+          From time to time we share reflections, case stories, and systems
+          insights from our work at Orchvate.
+        </p>
+        <p class="footer-text">
+          With gratitude,<br /><strong>The Orchvate Team</strong>
+        </p>
+      </div>
+
+      <!-- Error View -->
+      <div id="error-view">
+        <div class="error-icon">✕</div>
+        <h1>Invalid or expired link</h1>
+        <p>Something went wrong with your confirmation.</p>
+        <div class="divider"></div>
+        <p>The link might have expired or has already been used.</p>
+        <p>
+          <a
+            href="form.html"
+            style="
+              color: #150e56;
+              text-decoration: underline;
+              font-weight: bold;
+            "
+            >Subscribe again</a
+          >
+        </p>
+      </div>
+    </div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const token = params.get("token");
+
+const loadingView = document.getElementById("loading-view");
+const confirmationView = document.getElementById("confirmation-view");
+const alreadyVerifiedView = document.getElementById("already-verified-view");
+const errorView = document.getElementById("error-view");
+
+const VERIFY_URL =
+"https://nnilgrsthdccnnbcrcyc.supabase.co/rest/v1/rpc/verify_newsletter_token";
+
+let requestSent = false;
+
+// Validate token
+if (!token || token.trim() === "") {
+  loadingView.style.display = "none";
+  errorView.style.display = "block";
+  console.error("Invalid or missing token");
+} else {
+
+  if (!requestSent) {
+    requestSent = true;
+
+    fetch(VERIFY_URL, {
+      method: "POST",
+      headers: {
+        "apikey": "sb_publishable_lWIJG_mLNf6sEPjezs-cZQ_QJ_hfljx",
+        "Authorization": "Bearer sb_publishable_lWIJG_mLNf6sEPjezs-cZQ_QJ_hfljx",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        input_token: token
+      })
+    })
+    .then((res) => {
+      if (!res.ok) throw new Error("Server error");
+      return res.json().catch(() => ({ success: false }));
+    })
+    .then((data) => {
+
+      setTimeout(() => {
+
+        loadingView.style.display = "none";
+
+        if (data && data.success === true) {
+          confirmationView.style.display = "block";
+        } 
+        else if (data && data.status === "already_verified") {
+          alreadyVerifiedView.style.display = "block";
+        } 
+        else {
+          console.error("Confirmation rejected by backend", data);
+          errorView.style.display = "block";
+        }
+
+      }, 3000);
+    })
+    .catch((err) => {
+      console.error("Confirmation error:", err);
+      loadingView.style.display = "none";
+      confirmationView.style.display = "none";
+      alreadyVerifiedView.style.display = "none";
+      errorView.style.display = "block";
+    });
+
+  }
+}
+</script>
+  </body>
+</html>

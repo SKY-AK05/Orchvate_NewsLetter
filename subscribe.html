@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscribe | Orchvate</title>
+  <link rel="stylesheet" href="universal-styles.css">
+  <style>
+    /* Override Mailchimp default styles */
+    #mc_embed_signup {
+      background: #ffffff !important;
+      clear: both;
+      font: 16px Arial, Helvetica, sans-serif !important;
+      width: 100% !important;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px 30px;
+    }
+
+    #mc_embed_signup form {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    #mc_embed_signup h2 {
+      font-size: 28px;
+      color: #150e56;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #mc_embed_signup .indicates-required {
+      text-align: right;
+      font-size: 14px;
+      margin-bottom: 20px;
+      color: #666;
+    }
+
+    #mc_embed_signup .asterisk {
+      color: #e85d75;
+      font-size: 16px;
+    }
+
+    #mc_embed_signup .mc-field-group {
+      padding-bottom: 20px;
+      width: 100%;
+    }
+
+    #mc_embed_signup .mc-field-group label {
+      display: block;
+      font-weight: bold;
+      font-size: 16px;
+      color: #150e56;
+      margin-bottom: 8px;
+    }
+
+    #mc_embed_signup input[type="email"] {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 16px;
+      border: 2px solid #dbe6ff;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #111111;
+      font-family: Arial, Helvetica, sans-serif;
+      transition: border-color 0.3s ease;
+    }
+
+    #mc_embed_signup input[type="email"]:focus {
+      outline: none;
+      border-color: #06907b;
+      box-shadow: 0 0 0 3px rgba(6, 144, 123, 0.1);
+    }
+
+    /* GDPR Section */
+    #mc_embed_signup #mergeRow-gdpr {
+      margin-top: 30px;
+      padding: 25px;
+      background: #EEF4FF;
+      border-radius: 8px;
+    }
+
+    #mc_embed_signup .content__gdpr label {
+      font-weight: bold;
+      font-size: 16px;
+      color: #150e56;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    #mc_embed_signup .content__gdpr p {
+      font-size: 14px;
+      color: #111111;
+      margin: 10px 0;
+      line-height: 1.6;
+    }
+
+    #mc_embed_signup .content__gdprLegal p {
+      font-size: 13px;
+      color: #666;
+      margin: 15px 0 0;
+      line-height: 1.5;
+    }
+
+    #mc_embed_signup .content__gdprLegal a {
+      color: #06907b;
+      text-decoration: underline;
+    }
+
+    #mc_embed_signup .mc_fieldset {
+      border: none !important;
+      padding: 0 !important;
+      margin: 15px 0 !important;
+      min-height: 0 !important;
+    }
+
+    #mc_embed_signup .checkbox.subfield {
+      display: flex;
+      align-items: flex-start;
+      margin: 10px 0;
+    }
+
+    #mc_embed_signup input[type="checkbox"] {
+      width: auto !important;
+      margin-right: 10px !important;
+      margin-top: 3px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    #mc_embed_signup .checkbox.subfield span {
+      font-size: 15px;
+      color: #111111;
+      line-height: 1.5;
+    }
+
+    /* Submit Button */
+    #mc_embed_signup .button {
+      background: #06907b;
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      display: block;
+      margin-top: 20px;
+    }
+
+    #mc_embed_signup .button:hover {
+      background: #058269;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(6, 144, 123, 0.3);
+    }
+
+    #mc_embed_signup .button:active {
+      transform: translateY(0);
+    }
+
+    #mc_embed_signup .clear.foot {
+      text-align: center;
+    }
+
+    /* Response Messages */
+    #mc_embed_signup .response {
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    #mc_embed_signup #mce-error-response {
+      background: #ffe5e5;
+      color: #c41e3a;
+      border: 2px solid #c41e3a;
+    }
+
+    #mc_embed_signup #mce-success-response {
+      background: #e5f9f6;
+      color: #06907b;
+      border: 2px solid #06907b;
+    }
+
+    /* Hide anti-bot field */
+    #mc_embed_signup div[aria-hidden="true"] {
+      position: absolute;
+      left: -5000px;
+    }
+
+    /* Hide Mailchimp badge */
+    #mc_embed_signup .optionalParent p {
+      display: none;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 768px) {
+      #mc_embed_signup {
+        padding: 30px 20px;
+      }
+
+      #mc_embed_signup h2 {
+        font-size: 24px;
+      }
+
+      #mc_embed_signup .mc-field-group label {
+        font-size: 15px;
+      }
+
+      #mc_embed_signup input[type="email"] {
+        font-size: 15px;
+        padding: 10px 12px;
+      }
+
+      #mc_embed_signup .button {
+        font-size: 16px;
+        padding: 12px 30px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      #mc_embed_signup {
+        padding: 20px 15px;
+      }
+
+      #mc_embed_signup h2 {
+        font-size: 20px;
+      }
+
+      #mc_embed_signup .mc-field-group label {
+        font-size: 14px;
+      }
+
+      #mc_embed_signup input[type="email"] {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/c2e0273b-0dab-d392-fe35-965293bee40c.png" alt="Orchvate">
+      <p>Serving the Neurodivergent Community</p>
+      <h1>Subscribe to Our Newsletter</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Content -->
+    <div class="content">
+      <h2>Stay Connected with Orchvate</h2>
+      <p>Join our newsletter to receive updates, insights, and stories about neuroinclusive workforce models.</p>
+      <p>We share updates occasionally—only when there's something worth passing on.</p>
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-container">
+      <div id="mc_embed_shell">
+        <div id="mc_embed_signup">
+          <form action="https://orchvate.us18.list-manage.com/subscribe/post?u=201e76b8f447ee4c8b7fbe53e&amp;id=e7a6fb217a&amp;f_id=006fb1e6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self">
+            <div id="mc_embed_signup_scroll">
+              <h2>Subscribe</h2>
+              
+              <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+              
+              <div class="mc-field-group">
+                <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="" placeholder="your@email.com">
+              </div>
+              
+              <div id="mergeRow-gdpr" class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group">
+                <div class="content__gdpr">
+                  <label>Receive Orchvate Updates</label>
+                  <p>We share reflections, case stories, and invitations to conversations</p>
+                  <fieldset class="mc_fieldset gdprRequired mc-field-group" name="interestgroup_field">
+                    <label class="checkbox subfield" for="gdpr_103798">
+                      <input type="checkbox" id="gdpr_103798" name="gdpr[103798]" class="gdpr" value="Y" checked>
+                      <span>Yes, I'd like to receive occasional updates from Orchvate</span>
+                    </label>
+                  </fieldset>
+                  <p>You can unsubscribe at any time by clicking the link in the footer of our emails. For information about our privacy practices, please visit our website.</p>
+                </div>
+                <div class="content__gdprLegal">
+                  <p>We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <a href="https://mailchimp.com/legal/terms" target="_blank">Learn more</a> about Mailchimp's privacy practices.</p>
+                </div>
+              </div>
+              
+              <div id="mce-responses" class="clear foot">
+                <div class="response" id="mce-error-response" style="display: none;"></div>
+                <div class="response" id="mce-success-response" style="display: none;"></div>
+              </div>
+              
+              <!-- Anti-bot field -->
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                <input type="text" name="b_201e76b8f447ee4c8b7fbe53e_e7a6fb217a" tabindex="-1" value="">
+              </div>
+              
+              <div class="optionalParent">
+                <div class="clear foot">
+                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
+                  <p style="margin: 0px auto;"><a href="http://eepurl.com/jwLWK6" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+                </div>
+              </div>
+              
+            </div>
+          </form>
+        </div>
+        <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+        <script type="text/javascript">
+          (function($) {
+            window.fnames = new Array(); 
+            window.ftypes = new Array();
+            fnames[0]='EMAIL';ftypes[0]='email';
+          }(jQuery));
+          var $mcj = jQuery.noConflict(true);
+        </script>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p><strong>Orchvate</strong></p>
+      <p>Building neuroinclusive workforce models</p>
+      <p>&copy; 2025 Orchvate. All rights reserved.</p>
+    </div>
+  </div>
+
+  <script src="subscribe-script.js"></script>
+
+</body>
+</html>
