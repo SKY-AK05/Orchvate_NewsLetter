@@ -2051,5 +2051,202 @@ appInsights.trackPageView();
       };
     });
   </script>
+
+  <!-- ============================================ -->
+  <!-- Application Insights Tracking Scripts -->
+  <!-- ============================================ -->
+  
+  <!-- Track User Clicks -->
+  <script type="text/javascript">
+    document.addEventListener("click", function(event) {
+      if (window.appInsights) {
+        appInsights.trackEvent({
+          name: "UserClick",
+          properties: {
+            element: event.target.tagName,
+            text: event.target.innerText ? event.target.innerText.substring(0, 100) : "N/A",
+            href: event.target.href || event.target.closest('a')?.href || "N/A"
+          }
+        });
+      }
+    });
+  </script>
+
+  <!-- Track Scroll Depth -->
+  <script type="text/javascript">
+    var lastScrollPercent = 0;
+    window.addEventListener("scroll", function() {
+      let scrollPercent = (window.scrollY + window.innerHeight) / document.body.scrollHeight * 100;
+      
+      // Track at 25%, 50%, 75%, and 100% scroll
+      if (window.appInsights && (scrollPercent >= 25 && lastScrollPercent < 25 || 
+                                  scrollPercent >= 50 && lastScrollPercent < 50 || 
+                                  scrollPercent >= 75 && lastScrollPercent < 75 || 
+                                  scrollPercent >= 100 && lastScrollPercent < 100)) {
+        appInsights.trackEvent({
+          name: "ScrollDepth",
+          properties: {
+            percent: Math.round(scrollPercent)
+          }
+        });
+      }
+      lastScrollPercent = scrollPercent;
+    });
+  </script>
+
+  <!-- Track Time Spent on Page -->
+  <script type="text/javascript">
+    let startTime = Date.now();
+    
+    window.addEventListener("beforeunload", function () {
+      let timeSpent = (Date.now() - startTime) / 1000;
+      
+      if (window.appInsights) {
+        appInsights.trackEvent({
+          name: "TimeSpent",
+          properties: {
+            seconds: Math.round(timeSpent),
+            minutes: Math.round(timeSpent / 60)
+          }
+        });
+      }
+    });
+  </script>
+
+  <!-- Track Device Information -->
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.appInsights) {
+        appInsights.trackEvent({
+          name: "DeviceInfo",
+          properties: {
+            userAgent: navigator.userAgent,
+            screenWidth: screen.width,
+            screenHeight: screen.height,
+            language: navigator.language,
+            cookiesEnabled: navigator.cookieEnabled
+          }
+        });
+      }
+    });
+  </script>
+
+  <!-- Track User Location (Optional) -->
+  <script type="text/javascript">
+    // Geolocation tracking (user permission required)
+    if (navigator.geolocation && window.appInsights) {
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          appInsights.trackEvent({
+            name: "UserLocation",
+            properties: {
+              latitude: Math.round(position.coords.latitude * 10000) / 10000,
+              longitude: Math.round(position.coords.longitude * 10000) / 10000,
+              accuracy: Math.round(position.coords.accuracy)
+            }
+          });
+        },
+        function(error) {
+          // Geolocation error - silently fail, user may have denied permission
+          if (window.appInsights) {
+            appInsights.trackTrace({
+              message: "Geolocation permission denied or unavailable",
+              severityLevel: 1
+            });
+          }
+        },
+        { timeout: 5000, enableHighAccuracy: false }
+      );
+    }
+  </script>
+
+  <!-- Track Form Interactions -->
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      // Track Modal Opens for Newsletter
+      const openNewsletterBtns = document.querySelectorAll('.open-newsletter');
+      openNewsletterBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          if (window.appInsights) {
+            appInsights.trackEvent({
+              name: "ModalOpened",
+              properties: {
+                modalType: "newsletter",
+                buttonText: this.innerText
+              }
+            });
+          }
+        });
+      });
+
+      // Track Modal Opens for Inquiry
+      const openInquiryBtns = document.querySelectorAll('.open-inquiry');
+      openInquiryBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          if (window.appInsights) {
+            appInsights.trackEvent({
+              name: "ModalOpened",
+              properties: {
+                modalType: "inquiry",
+                inquiryType: this.getAttribute('data-inquiry') || "N/A",
+                buttonText: this.innerText
+              }
+            });
+          }
+        });
+      });
+
+      // Track Form Submissions
+      const newsletterForm = document.getElementById('modalSubscriptionForm');
+      const inquiryForm = document.getElementById('modalInquiryForm');
+
+      if (newsletterForm) {
+        newsletterForm.addEventListener('submit', function() {
+          if (window.appInsights) {
+            appInsights.trackEvent({
+              name: "FormSubmitted",
+              properties: {
+                formType: "newsletter"
+              }
+            });
+          }
+        });
+      }
+
+      if (inquiryForm) {
+        inquiryForm.addEventListener('submit', function() {
+          if (window.appInsights) {
+            appInsights.trackEvent({
+              name: "FormSubmitted",
+              properties: {
+                formType: "inquiry",
+                topic: document.getElementById('inquiry-explore').value
+              }
+            });
+          }
+        });
+      }
+    });
+  </script>
+
+  <!-- Track Link Clicks (External Links) -->
+  <script type="text/javascript">
+    document.addEventListener('click', function(event) {
+      const target = event.target.closest('a');
+      if (target && target.href && window.appInsights) {
+        const isExternal = !target.href.includes(window.location.hostname);
+        
+        if (isExternal) {
+          appInsights.trackEvent({
+            name: "ExternalLinkClicked",
+            properties: {
+              url: target.href,
+              text: target.innerText || "N/A"
+            }
+          });
+        }
+      }
+    });
+  </script>
 </body>
 </html>
