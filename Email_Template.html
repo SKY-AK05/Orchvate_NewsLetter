@@ -150,11 +150,14 @@
 		.mobile-center, .mobile-center td, .mobile-center h3, .mobile-center p, .mobile-center h4 {
 			text-align:center !important;
 		}
+		.stack td {
+			display: block !important;
+			width: 100% !important;
+		}
 		.btn-stack {
 			display: block !important;
 			width: 100% !important;
 			margin-bottom: 15px !important;
-			padding-right: 0 !important;
 		}
 		.btn-stack table {
 			width: 100% !important;
@@ -163,8 +166,46 @@
 			display: block !important;
 			text-align: center !important;
 		}
+		.newsletter-btn-cell {
+			margin: 0 !important;
+		}
+		/* Mobile-specific NASSCOM featured section layout */
+		@media screen and (max-width:599px) {
+			.nasscom-featured > tbody > tr > td {
+				display: block !important;
+				width: 100% !important;
+				text-align: center !important;
+				padding-bottom: 15px !important;
+			}
+			.nasscom-featured td.newsletter-btn-cell {
+				display: inline-block !important;
+				width: 48% !important;
+				padding: 5px !important;
+				box-sizing: border-box !important;
+				margin: 0 !important;
+			}
+			.nasscom-featured td.newsletter-btn-cell:last-child {
+				display: block !important;
+				width: 100% !important;
+				text-align: center !important;
+				padding: 5px !important;
+			}
+			.nasscom-featured td.newsletter-btn-cell:last-child table {
+				margin: 15px auto 0 !important;
+				display: inline-block !important;
+			}
+			.nasscom-featured table[align="center"] > tbody > tr {
+				display: block !important;
+				text-align: center !important;
+			}
+		}
 		#awards .px {
 			text-align: center !important;
+		}
+		#awards .stack > tbody > tr > td {
+			display: block !important;
+			width: 100% !important;
+			padding: 8px 0 !important;
 		}
 		#awards .stack td {
 			padding-top: 15px !important;
@@ -172,6 +213,19 @@
 		}
 		#awards .stack > tbody > tr > td {
 			padding-bottom: 10px !important;
+		}
+		/* Mobile: Remove excessive padding from Coaching and Workshops cards */
+		@media screen and (max-width:599px) {
+			td[width="280"] {
+				padding-top: 15px !important;
+			}
+		}
+		/* Desktop/Tablet: Align buttons at same level in Awards grid */
+		@media screen and (min-width:600px) {
+			#awards .stack td[width="50%"] > div > table > tbody > tr > td {
+				vertical-align: bottom !important;
+				height: 260px !important;
+			}
 		}
 		td[style*="linear-gradient"] {
 			padding-left: 20px !important;
@@ -198,7 +252,7 @@
 		}
 	}
 </style></head>
-<body style="margin:0; padding:0;">
+<body style="margin:0; padding:0; background:#f6f9ff;">
 
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#f6f9ff">
     <tr>
@@ -286,14 +340,9 @@
           We share updates occasionally. Only when there is something worth passing on. A learning. A case story. A systems insight.
         </p>
 
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:20px;">
-          <tr>
-            <td style="font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; font-weight:bold; width:1%; white-space:nowrap; padding-right:12px;">
-              If you'd like to receive updates like this:
-            </td>
-            <td style="border-bottom:1px solid #eeeeee;">&nbsp;</td>
-          </tr>
-        </table>
+        <p style="margin:0 0 20px; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; font-weight:bold; border-bottom:1px solid #eeeeee; padding-bottom:8px;">
+          If you'd like to receive updates like this:
+        </p>
 
         <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin: 24px 0 48px;">
           <tr>
@@ -306,7 +355,7 @@
         </table>
 
         <!-- Sign-off -->
-        <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.6;">
+        <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.6; text-align:center;">
           With gratitude,<br>
           <strong style="font-size:18px; color:#150e56;">Geethanjali &amp; Panchali</strong><br>
           <span style="font-size:14px; color:#666; letter-spacing:1px;">Cofounders, Orchvate</span>
@@ -865,15 +914,15 @@
           background-repeat:repeat;
           padding:18px;">
 
-            <p style="font-family:Arial;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#150e56;margin:0 0 6px;">
+            <p style="font-family:Arial;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f6f9ff;margin:0 0 6px;">
               The ADHD Lens
             </p>
 
-            <h3 style="font-family:Arial;color:#150e56;font-size:18px;margin:0 0 8px;">
+            <h3 style="font-family:Arial;color:#f6f9ff;font-size:18px;margin:0 0 8px;">
               ADHD Self-Assessment
             </h3>
 
-            <p style="font-family:Arial;color:#111111;font-size:14px;line-height:1.5;margin:0 0 14px;">
+            <p style="font-family:Arial;color:#f6f9ff;font-size:14px;line-height:1.5;margin:0 0 14px;">
               A quick check-in on attention, organisation, and impulse patterns.
             </p>
 
@@ -889,7 +938,7 @@
               </tr>
             </table>
 
-            <p style="font-family:Arial;font-size:12px;color:#150e56;margin:10px 0 0;">
+            <p style="font-family:Arial;font-size:12px;color:#f6f9ff;margin:10px 0 0;">
               ~7 min quiz
             </p>
 
@@ -927,15 +976,15 @@
     padding:18px;
   ">
 
-    <p style="font-family:Arial;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#150e56;margin:0 0 6px;">
+    <p style="font-family:Arial;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f6f9ff;margin:0 0 6px;">
       The Autism Spectrum
     </p>
 
-    <h3 style="font-family:Arial;color:#150e56;font-size:18px;margin:0 0 8px;">
+    <h3 style="font-family:Arial;color:#f6f9ff;font-size:18px;margin:0 0 8px;">
       Autism Self-Assessment
     </h3>
 
-    <p style="font-family:Arial;color:#111111;font-size:14px;line-height:1.5;margin:0 0 14px;">
+    <p style="font-family:Arial;color:#f6f9ff;font-size:14px;line-height:1.5;margin:0 0 14px;">
       Explore communication, sensory needs, and routine patterns.
     </p>
 
@@ -951,7 +1000,7 @@
       </tr>
     </table>
 
-    <p style="font-family:Arial;font-size:12px;color:#150e56;margin:10px 0 0;">
+    <p style="font-family:Arial;font-size:12px;color:#f6f9ff;margin:10px 0 0;">
       ~12 min quiz
     </p>
 
@@ -1020,7 +1069,7 @@
                        style="display:block;width:320px;max-width:100%;height:auto;border-radius:16px;border:2px solid #06907b;">
                 </td>
 
-                <td width="280" valign="middle" style="padding:0 0 0 14px;">
+                <td width="280" valign="top" style="padding:85px 0 0 14px;">
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 
                     <tr>
@@ -1101,7 +1150,7 @@
 
                 </td>
 
-                <td width="280" valign="middle" style="padding:0 0 14px 14px;">
+                <td width="280" valign="top" style="padding:85px 0 14px 14px;">
 
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                     <tr>
@@ -1331,16 +1380,16 @@
                     Featured
                   </p>
 
-                  <table width="100%" class="stack" role="presentation">
-                    <tr dir="rtl">
+                  <table width="100%" class="stack nasscom-featured" role="presentation">
+                    <tr>
 
-                      <!-- 2. LOGO (Appears 2nd on mobile, stays on the RIGHT on desktop) -->
-                      <td width="130" align="center" valign="top" class="mobile-center" dir="ltr" style="padding-bottom:20px;">
+                      <!-- 2. LOGO (Appears 2nd on mobile, stays on the LEFT on desktop) -->
+                      <td width="130" align="center" valign="top" class="mobile-center" style="padding-bottom:20px;">
                         <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/a63d9a37-6c21-15d3-b379-678a5601f3f5.png" width="90" alt="NASSCOM" style="display:inline-block;">
                       </td>
 
-                      <!-- 3, 4, 5. HEADING, DESCRIPTION & BUTTONS (Appears after logo on mobile, on the LEFT on desktop) -->
-                      <td valign="top" class="mobile-center" dir="ltr">
+                      <!-- 3, 4, 5. HEADING & DESCRIPTION (Appears after logo on mobile, on the RIGHT on desktop) -->
+                      <td valign="top" class="mobile-center">
 
                         <h3 style="margin:0 0 10px;font-family:Arial;color:#150e56;font-size:20px;font-weight:bold;">
                           Recognized in three NASSCOM publications
@@ -1350,10 +1399,15 @@
                           A proud milestone — Our work was highlighted across multiple NASSCOM community publications.
                         </p>
 
-                        <!-- BUTTONS (Fixed alignment) -->
+                      </td>
+
+                    </tr>
+                    <tr>
+                      <td colspan="2" align="center" style="padding-top:10px;">
+                        <!-- BUTTONS (Single row on tablet/desktop) -->
                         <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
                           <tr>
-                            <td style="padding:5px;">
+                            <td style="padding:5px;" class="newsletter-btn-cell">
                               <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                   <td bgcolor="#150e56" style="border-radius:999px;">
@@ -1365,7 +1419,7 @@
                                 </tr>
                               </table>
                             </td>
-                            <td style="padding:5px;">
+                            <td style="padding:5px;" class="newsletter-btn-cell">
                               <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                   <td bgcolor="#150e56" style="border-radius:999px;">
@@ -1377,10 +1431,8 @@
                                 </tr>
                               </table>
                             </td>
-                          </tr>
-                          <tr>
-                            <td style="padding:5px;" colspan="2">
-                              <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center">
+                            <td style="padding:5px;" class="newsletter-btn-cell">
+                              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                   <td bgcolor="#150e56" style="border-radius:999px;">
                                     <a href="https://community.nasscom.in/communities/diversity-and-inclusion/dei-best-practices-whitepaper-randstad-supported-nasscom"
@@ -1393,9 +1445,7 @@
                             </td>
                           </tr>
                         </table>
-
                       </td>
-
                     </tr>
                   </table>
 
@@ -1415,14 +1465,14 @@
             <!-- ROW 1 -->
             <tr>
               <!-- CARD 1 (ET + BS) -->
-              <td width="50%" style="padding:8px;" valign="top">
-                <div style="border-radius:14px;overflow:hidden;">
+              <td width="50%" style="padding:8px;vertical-align:top;height:100%;">
+                <div style="border-radius:14px;overflow:hidden;height:100%;">
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
                          style="background:#ffffff;border-radius:14px;border:1px solid #e3ecff;">
                     <tr>
                       <td style="padding:22px 18px;text-align:center;">
                         <!-- TITLE -->
-                        <h4 style="margin:0 0 15px;font-family:Arial,Helvetica,sans-serif;color:#150e56;font-size:16px;line-height:1.35;text-align:center;">
+                        <h4 style="margin:0 0 15px;font-family:Arial,Helvetica,sans-serif;color:#150e56;font-size:16px;line-height:1.35;text-align:center;min-height:42px;">
                           Featured in Economic Times<br>&amp; Business Standard
                         </h4>
 
@@ -1431,40 +1481,32 @@
                           <tr>
                             <!-- ET BLOCK -->
                             <td width="50%" align="center" valign="top" class="mobile-center" style="padding-bottom:15px;">
-                              <div style="margin-bottom:12px;">
-                                <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/30696c53-67d4-2e82-8f4d-8a9d422ae5cf.png"
-                                     width="72" alt="Economic Times"
-                                     style="display:inline-block;border:0;">
+                              <div style="margin-bottom:15px; height:80px; display:table; width:100%;">
+                                <div style="display:table-cell; vertical-align:middle; text-align:center;">
+                                  <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/30696c53-67d4-2e82-8f4d-8a9d422ae5cf.png"
+                                       width="72" alt="Economic Times"
+                                       style="display:inline-block;border:0;">
+                                </div>
                               </div>
-                              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                                <tr>
-                                  <td bgcolor="#150e56" style="border-radius:999px;">
-                                    <a href="https://economictimes.indiatimes.com/jobs/hr-policies-trends/how-ai-typical-day-at-work-affects-neurodiverse-talent/articleshow/120652561.cms?_oref=cook&from=mdr" 
-                                       style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:8px 14px;font-size:12px;font-weight:bold;border-radius:999px;">
-                                      Read ET
-                                    </a>
-                                  </td>
-                                </tr>
-                              </table>
+                              <a href="https://economictimes.indiatimes.com/jobs/hr-policies-trends/how-ai-typical-day-at-work-affects-neurodiverse-talent/articleshow/120652561.cms?_oref=cook&from=mdr" 
+                                 style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:8px 14px;font-size:12px;font-weight:bold;border-radius:999px;background-color:#150e56;">
+                                Read ET
+                              </a>
                             </td>
 
                             <!-- BS BLOCK -->
                             <td width="50%" align="center" valign="top" class="mobile-center" style="padding-bottom:15px;">
-                              <div style="margin-bottom:12px;">
-                                <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/d829d579-1e5e-ddb4-8876-764c02ad12e5.png"
-                                     width="72" alt="Business Standard"
-                                     style="display:inline-block;border:0;">
+                              <div style="margin-bottom:15px; height:80px; display:table; width:100%;">
+                                <div style="display:table-cell; vertical-align:middle; text-align:center;">
+                                  <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/d829d579-1e5e-ddb4-8876-764c02ad12e5.png"
+                                       width="72" alt="Business Standard"
+                                       style="display:inline-block;border:0;">
+                                </div>
                               </div>
-                              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                                <tr>
-                                  <td bgcolor="#150e56" style="border-radius:999px;">
-                                    <a href="https://www.business-standard.com/content/press-releases-ani/nasscom-foundation-and-mathco-collaborate-to-skill-and-empower-neurodivergent-youth-125021301155_1.html" 
-                                       style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:8px 14px;font-size:12px;font-weight:bold;border-radius:999px;">
-                                      Read BS
-                                    </a>
-                                  </td>
-                                </tr>
-                              </table>
+                              <a href="https://www.business-standard.com/content/press-releases-ani/nasscom-foundation-and-mathco-collaborate-to-skill-and-empower-neurodivergent-youth-125021301155_1.html" 
+                                 style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:8px 14px;font-size:12px;font-weight:bold;border-radius:999px;background-color:#150e56;">
+                                Read BS
+                              </a>
                             </td>
                           </tr>
                         </table>
@@ -1475,8 +1517,8 @@
               </td>
 
               <!-- CARD 2 (Microsoft) -->
-              <td width="50%" style="padding:8px;" valign="top">
-                <div style="border-radius:14px;overflow:hidden;">
+              <td width="50%" style="padding:8px;vertical-align:top;height:100%;">
+                <div style="border-radius:14px;overflow:hidden;height:100%;">
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
                          style="background:#ffffff;border-radius:14px;border:1px solid #e3ecff;">
                     <tr>
@@ -1490,16 +1532,10 @@
                                  width="84" alt="Microsoft" style="display:inline-block; border:0;">
                           </div>
                         </div>
-                        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                          <tr>
-                            <td bgcolor="#150e56" style="border-radius:999px;">
-                              <a href="https://www.microsoft.com/en-in/aifirstmovers#tab-tab-5" 
-                                 style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:8px 14px;font-size:12px;font-weight:bold;border-radius:999px;">
-                                View feature
-                              </a>
-                            </td>
-                          </tr>
-                        </table>
+                        <a href="https://www.microsoft.com/en-in/aifirstmovers#tab-tab-5" 
+                           style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:8px 14px;font-size:12px;font-weight:bold;border-radius:999px;background-color:#150e56;">
+                          View feature
+                        </a>
                       </td>
                     </tr>
                   </table>
@@ -1510,8 +1546,8 @@
             <!-- ROW 2 -->
             <tr>
               <!-- CARD 3 (Neurowrx) -->
-              <td width="50%" style="padding:8px;" valign="top">
-                <div style="border-radius:14px;overflow:hidden;">
+              <td width="50%" style="padding:8px;vertical-align:top;height:100%;">
+                <div style="border-radius:14px;overflow:hidden;height:100%;">
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
                          style="background:#ffffff;border-radius:14px;border:1px solid #e3ecff;">
                     <tr>
@@ -1525,16 +1561,10 @@
                                  alt="NeuroWRX" style="display:inline-block; border:0; height:70px; width:auto;">
                           </div>
                         </div>
-                        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                          <tr>
-                            <td bgcolor="#150e56" style="border-radius:999px;">
-                              <a href="https://www.neurowrx.org/post/orchvate-co-founder-panchali-banerjee-joins-neurowrx-board-of-directors" 
-                                 style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:8px 14px;font-size:12px;font-weight:bold;border-radius:999px;">
-                                Read announcement
-                              </a>
-                            </td>
-                          </tr>
-                        </table>
+                        <a href="https://www.neurowrx.org/post/orchvate-co-founder-panchali-banerjee-joins-neurowrx-board-of-directors" 
+                           style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:8px 14px;font-size:12px;font-weight:bold;border-radius:999px;background-color:#150e56;">
+                          Read announcement
+                        </a>
                       </td>
                     </tr>
                   </table>
@@ -1542,8 +1572,8 @@
               </td>
 
               <!-- CARD 4 (CND Award) -->
-              <td width="50%" style="padding:8px;" valign="top">
-                <div style="border-radius:14px;overflow:hidden;">
+              <td width="50%" style="padding:8px;vertical-align:top;height:100%;">
+                <div style="border-radius:14px;overflow:hidden;height:100%;">
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"
                          style="background:#ffffff;border-radius:14px;border:1px solid #e3ecff;">
                     <tr>
@@ -1557,16 +1587,10 @@
                                  width="78" alt="Award" style="display:inline-block; border:0;">
                           </div>
                         </div>
-                        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                          <tr>
-                            <td bgcolor="#150e56" style="border-radius:999px;">
-                              <a href="https://geniuswithin.org/our-awards/stereotype-buster/" 
-                                 style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:8px 14px;font-size:12px;font-weight:bold;border-radius:999px;">
-                                View award
-                              </a>
-                            </td>
-                          </tr>
-                        </table>
+                        <a href="https://geniuswithin.org/our-awards/stereotype-buster/" 
+                           style="display:inline-block;font-family:Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;padding:8px 14px;font-size:12px;font-weight:bold;border-radius:999px;background-color:#150e56;">
+                          View award
+                        </a>
                       </td>
                     </tr>
                   </table>
