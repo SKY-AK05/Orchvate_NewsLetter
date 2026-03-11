@@ -1,0 +1,294 @@
+================================================================================
+HREF LINKS ANALYSIS FOR index.html
+================================================================================
+Generated: March 11, 2026
+Total Links Found: 32
+================================================================================
+
+
+INTERNAL ANCHOR LINKS (Sections within the page)
+================================================================================
+
+1. LINE 453:
+   href="#"
+   Location: "Join our updates" button in the "Note from Founders" section
+   Context: CTA button for newsletter signup
+   Class: open-newsletter
+
+2. LINE 498:
+   href="#programs"
+   Location: Quick Overview section - first item link
+   Context: Navigation link to "≈300 participants across Neuro AI"
+   Target Section: Programs & Learning area
+
+3. LINE 531:
+   href="#coaching"
+   Location: Quick Overview section - second item link
+   Context: Navigation link to "Expanded coaching for ND individuals & managers"
+   Target Section: Coaching & Inclusion area
+
+4. LINE 564:
+   href="#workshops"
+   Location: Quick Overview section - third item link
+   Context: Navigation link to "Workshops & global conferences throughout 2025"
+   Target Section: Workshops area
+
+5. LINE 597:
+   href="#awards"
+   Location: Quick Overview section - fourth item link
+   Context: Navigation link to "Featured in ET, Business Standard & NASSCOM"
+   Target Section: Awards & Recognition area
+
+6. LINE 630:
+   href="#watchjourney"
+   Location: Quick Overview section - fifth item link
+   Context: Navigation link to "Watch the Journey — our 2025 video recap"
+   Target Section: Video recap section
+
+7. LINE 663:
+   href="#leader_interviews"
+   Location: Quick Overview section - sixth item link
+   Context: Navigation link to "Expert interviews with Dr. Ranga Jayaraman & Dr. Ian McDonald"
+   Target Section: Leader interviews area
+
+8. LINE 1731:
+   href="#"
+   Location: Footer/CTA section - "Join our updates" button
+   Context: Newsletter signup call-to-action at end of email
+   Class: open-newsletter
+
+
+EXTERNAL LINKS - SOCIAL MEDIA & PLATFORMS
+================================================================================
+
+9. LINE 804:
+   href="https://youtu.be/wG5fJqhksS0"
+   Location: Video section (MSO/Outlook-specific code)
+   Context: YouTube video link for "Our 2025 video recap"
+   Note: This is within conditional Outlook formatting code
+
+10. LINE 823:
+    href="https://youtu.be/wG5fJqhksS0"
+    Location: Video section (standard HTML)
+    Context: YouTube video link for "Our 2025 video recap"
+    Display: Video thumbnail with play button overlay
+    Target: Opens in new window (target="_blank")
+
+11. LINE 1759:
+    href="https://www.linkedin.com/company/orchvate/"
+    Location: Footer - Social media links section
+    Context: LinkedIn company page link
+    Target: Opens in new window (target="_blank")
+
+12. LINE 1765:
+    href="https://instagram.com/orchvate?igsh=MWZ1NGJrZmdjbHBiZQ=="
+    Location: Footer - Social media links section
+    Context: Instagram profile link
+    Target: Opens in new window (target="_blank")
+
+13. LINE 1771:
+    href="https://facebook.com/share/1J8NcnBiQT/?mibextid=wwXIfr"
+    Location: Footer - Social media links section
+    Context: Facebook share link
+    Target: Opens in new window (target="_blank")
+
+
+EXTERNAL LINKS - ARTICLES & PRESS
+================================================================================
+
+14. LINE 1392:
+    href="https://www.linkedin.com/pulse/from-awareness-action-dr-ranga-jayaraman-building-neuroinclusive-fjqec/"
+    Location: Leader Interviews section - Dr. Ranga Jayaraman interview
+    Context: LinkedIn Pulse article by Dr. Ranga Jayaraman
+    Title: "From Awareness to Action: Dr. Ranga Jayaraman on Building Neuroinclusive..."
+
+15. LINE 1433:
+    href="https://www.linkedin.com/pulse/building-beyond-checklist-conversation-inclusion-dr-ian-mcdonald-ipvaf/"
+    Location: Leader Interviews section - Dr. Ian McDonald interview
+    Context: LinkedIn Pulse article by Dr. Ian McDonald
+    Title: "Building Beyond Checklist: Is conversation the missing piece in inclusion?"
+
+16. LINE 1549:
+    href="https://community.nasscom.in/communities/neurodiversity/neurodiversity-and-future-work-india"
+    Location: Awards & Recognition section - NASSCOM links
+    Context: NASSCOM Community - Neurodiversity and Future of Work in India
+    Display: Button with "classname="nasscom-btn"
+
+17. LINE 1553:
+    href="https://community.nasscom.in/communities/people-disability-pwd/envisioning-future-disability-inclusion-india"
+    Location: Awards & Recognition section - NASSCOM links
+    Context: NASSCOM Community - Envisioning Future of Disability Inclusion
+    Display: Button with classname="nasscom-btn"
+
+18. LINE 1557:
+    href="https://community.nasscom.in/communities/diversity-and-inclusion/dei-best-practices-whitepaper-randstad-supported-nasscom"
+    Location: Awards & Recognition section - NASSCOM links
+    Context: NASSCOM Community - DEI Best Practices Whitepaper (Randstad supported)
+    Display: Button with classname="nasscom-btn"
+
+19. LINE 1605:
+    href="https://economictimes.indiatimes.com/jobs/hr-policies-trends/how-ai-typical-day-at-work-affects-neurodiverse-talent/articleshow/120652561.cms?_oref=cook&from=mdr"
+    Location: Awards & Recognition section - Media Coverage
+    Context: Economic Times article "How AI & typical day at work affects neurodiverse talent"
+    Button Text: "Read ET"
+    Display: Button with classname="nasscom-btn"
+
+20. LINE 1615:
+    href="https://www.business-standard.com/content/press-releases-ani/nasscom-foundation-and-mathco-collaborate-to-skill-and-empower-neurodivergent-youth-125021301155_1.html"
+    Location: Awards & Recognition section - Media Coverage
+    Context: Business Standard press release about NASSCOM Foundation collaboration
+    Title: "NASSCOM Foundation and MathCo collaborate to skill and empower neurodivergent youth"
+    Button Text: "Read BS"
+    Display: Button with classname="nasscom-btn"
+
+21. LINE 1639:
+    href="https://www.microsoft.com/en-in/aifirstmovers#tab-tab-5"
+    Location: Awards & Recognition section - Awards & Features
+    Context: Microsoft AI First Movers feature page
+    Button Text: "View feature"
+    Display: Button with classname="nasscom-btn"
+
+22. LINE 1663:
+    href="https://www.neurowrx.org/post/orchvate-co-founder-panchali-banerjee-joins-neurowrx-board-of-directors"
+    Location: Awards & Recognition section - Awards & Features
+    Context: NeuroWrx announcement about Panchali Banerjee joining board
+    Button Text: "Read announcement"
+    Display: Button with classname="nasscom-btn"
+
+23. LINE 1684:
+    href="https://geniuswithin.org/our-awards/stereotype-buster/"
+    Location: Awards & Recognition section - Awards & Features
+    Context: Genius Within "Stereotype Buster" award page
+    Button Text: "View award"
+    Display: Button with classname="nasscom-btn"
+
+
+EXTERNAL LINKS - DOCUMENTS & RESOURCES
+================================================================================
+
+24. LINE 943:
+    href="https://orchvate-my.sharepoint.com/:b:/p/geethanjali_ganapathy/IQDCIYlZmii4RpfW0_UxQLThAaKhi6u3BvKplayBCQXXsOE?e=96QesD"
+    Location: Testimonials section - at the bottom
+    Context: SharePoint link to full testimonials PDF document
+    Display: "See all testimonials" link
+    Target: Opens in new window (target="_blank")
+
+
+FORM PAGES - INTERNAL NAVIGATION
+================================================================================
+
+25. LINE 982:
+    href="https://updates.orchvate.com/secondform.html?inquiry=Cohort%20%2F%20program%20sponsorship%20(CSR%20%2F%20foundation)"
+    Location: "Support the Next Cohort" CTA section
+    Context: Form page link for CSR/Foundation partnerships
+    Button Text: "Support the Next Cohort"
+    Query Parameter: inquiry= "Cohort / program sponsorship (CSR / foundation)"
+    Class: open-inquiry
+
+26. LINE 1237:
+    href="https://updates.orchvate.com/secondform.html?inquiry=Partnership%20or%20collaboration"
+    Location: Coaching & Workshops section - CTA
+    Context: Form page link for partnership inquiries
+    Button Text: "Tell us more"
+    Query Parameter: inquiry= "Partnership or collaboration"
+    Class: open-inquiry
+
+27. LINE 1322:
+    href="https://updates.orchvate.com/secondform.html?inquiry=Pilot%20%2F%20proof%20of%20concept"
+    Location: Workshops & Implementation section - CTA
+    Context: Form page link for pilot program inquiries
+    Button Text: "Discuss a pilot"
+    Query Parameter: inquiry= "Pilot / proof of concept"
+    Class: open-inquiry
+
+28. LINE 1464:
+    href="https://updates.orchvate.com/secondform.html?inquiry=General%20conversation"
+    Location: General conversation section - CTA
+    Context: Form page link for general inquiries
+    Button Text: "Let's talk"
+    Query Parameter: inquiry= "General conversation"
+    Class: open-inquiry
+
+
+ASSESSMENT LINKS - EXTERNAL PAGES
+================================================================================
+
+29. LINE 1057:
+    href="https://www.orchvate.com/assessments/adhd.html"
+    Location: Self-Assessment section - ADHD Card
+    Context: ADHD Self-Assessment external link
+    Display: "Start now" button
+    Duration: ~7 min quiz
+
+30. LINE 1119:
+    href="https://www.orchvate.com/assessments/autism.html"
+    Location: Self-Assessment section - Autism Card
+    Context: Autism Self-Assessment external link
+    Display: "Start now" button
+    Duration: ~12 min quiz
+
+
+EMAIL LINKS
+================================================================================
+
+31. LINE 1155:
+    href="mailto:info@orchvate.com"
+    Location: Note under Self-Assessment section
+    Context: Contact email link in informational message
+    Display: "info@orchvate.com"
+
+32. LINE 1752:
+    href="mailto:info@orchvate.com"
+    Location: Footer section
+    Context: Contact email link
+    Display: "info@orchvate.com"
+    Font Weight: bold
+
+
+================================================================================
+SUMMARY & BREAKDOWN
+================================================================================
+
+Link Types:
+- Internal Anchor Links (#): 8
+- Email Links (mailto:): 2
+- External Websites: 20
+- Form Pages (internal): 4
+
+External Link Categories:
+- YouTube Videos: 2
+- Social Media: 3
+- Articles & Press: 7
+- NASSCOM Community: 3
+- Awards & Recognition: 3
+- Documents (SharePoint): 1
+- Assessments: 2
+
+Key Landing Pages:
+- secondform.html: Used with 4 different inquiry parameters
+- YouTube: wG5fJqhksS0 (2 instances)
+- Orchvate.com: assessments section (2 links)
+
+Primary CTAs With Forms:
+1. "Support the Next Cohort" → CSR sponsorship form
+2. "Tell us more" → Partnership inquiry form
+3. "Discuss a pilot" → Pilot program form
+4. "Let's talk" → General conversation form
+
+External Domains Used:
+- youtu.be (YouTube)
+- orchvate-my.sharepoint.com (Documents)
+- orchvate.com (Internal assessment pages)
+- linkedin.com (Articles & Company page)
+- instagram.com (Social)
+- facebook.com (Social)
+- economictimes.indiatimes.com (Press)
+- business-standard.com (Press)
+- microsoft.com (Features)
+- neurowrx.org (Awards)
+- geniuswithin.org (Awards)
+- community.nasscom.in (Community)
+
+================================================================================
+END OF REPORT
+================================================================================
