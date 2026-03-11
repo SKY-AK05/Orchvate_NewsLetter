@@ -120,135 +120,96 @@
 			margin:0;
 		}
 @media screen and (max-width:599px){
-		.px{
-			padding-left:16px !important;
-			padding-right:16px !important;
+		body {
+			overflow-x: hidden !important;
 		}
-		#general_conversation td[style*="padding:60px"] {
-			padding: 40px 16px !important;
-		}
-		.newsletter-card {
-			padding: 40px 20px !important;
-			border-radius: 16px !important;
-		}
-		.newsletter-heading {
-			font-size: 26px !important;
-		}
-		.newsletter-text {
-			font-size: 15px !important;
-			text-align: center !important;
-		}
-		.stack td{
-			display:block !important;
-			width:100% !important;
-		}
-		.stack, .stack table, .stack td, .stack tr {
-			height: auto !important;
-			padding-left: 4px !important;
-			padding-right: 4px !important;
-		}
-		.mobile-center, .mobile-center td, .mobile-center h3, .mobile-center p, .mobile-center h4 {
-			text-align:center !important;
-		}
-		.stack td {
-			display: block !important;
-			width: 100% !important;
-		}
-		.btn-stack {
-			display: block !important;
-			width: 100% !important;
-			margin-bottom: 15px !important;
-		}
-		.btn-stack table {
-			width: 100% !important;
-		}
-		.btn-stack table a {
-			display: block !important;
-			text-align: center !important;
-		}
-		.newsletter-btn-cell {
-			margin: 0 !important;
-		}
-		/* Mobile-specific NASSCOM featured section layout */
-		@media screen and (max-width:599px) {
-			.nasscom-featured > tbody > tr > td {
-				display: block !important;
-				width: 100% !important;
-				text-align: center !important;
-				padding-bottom: 15px !important;
-			}
-			.nasscom-featured td.newsletter-btn-cell {
-				display: inline-block !important;
-				width: 48% !important;
-				padding: 5px !important;
-				box-sizing: border-box !important;
-				margin: 0 !important;
-			}
-			.nasscom-featured td.newsletter-btn-cell:last-child {
-				display: block !important;
-				width: 100% !important;
-				text-align: center !important;
-				padding: 5px !important;
-			}
-			.nasscom-featured td.newsletter-btn-cell:last-child table {
-				margin: 15px auto 0 !important;
-				display: inline-block !important;
-			}
-			.nasscom-featured table[align="center"] > tbody > tr {
-				display: block !important;
-				text-align: center !important;
-			}
-		}
-		#awards .px {
-			text-align: center !important;
-		}
-		#awards .stack > tbody > tr > td {
-			display: block !important;
-			width: 100% !important;
-			padding: 8px 0 !important;
-		}
-		#awards .stack td {
-			padding-top: 15px !important;
-			padding-bottom: 15px !important;
-		}
-		#awards .stack > tbody > tr > td {
-			padding-bottom: 10px !important;
-		}
-		/* Mobile: Remove excessive padding from Coaching and Workshops cards */
-		@media screen and (max-width:599px) {
-			td[width="280"] {
-				padding-top: 15px !important;
-			}
-		}
-		/* Desktop/Tablet: Align buttons at same level in Awards grid */
-		@media screen and (min-width:600px) {
-			#awards .stack td[width="50%"] > div > table > tbody > tr > td {
-				vertical-align: bottom !important;
-				height: 260px !important;
-			}
-		}
-		td[style*="linear-gradient"] {
-			padding-left: 20px !important;
-			background: linear-gradient(to right, #06907b 0, #06907b 10px, #f6f9ff 10px, #f6f9ff 100%) !important;
+		.px {
+			padding-left: 25% !important;
+			padding-right: 25% !important;
 		}
 		.container {
 			width: 100% !important;
-			max-width: 100% !important;
+			margin: 0 auto !important;
+			table-layout: fixed !important;
 		}
-		table[width="700"] {
-			width: 100% !important;
-			max-width: 100% !important;
-		}
-		img[width="700"] {
-			width: 100% !important;
-			height: auto !important;
-		}
-		img[width="592"] {
+		table[width="700"], img[width="700"], img[width="592"] {
 			width: 100% !important;
 			height: auto !important;
 		}
 		div[style*="max-width:620px"] {
 			max-width: 100% !important;
+		}
+		/* Stacking behavior */
+		.stack, .stack > tbody > tr > td {
+			display: block !important;
+			width: 100% !important;
+			box-sizing: border-box !important;
+		}
+		.stack td {
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+		.mobile-center, .mobile-center td, .mobile-center h3, .mobile-center p, .mobile-center h4 {
+			text-align: center !important;
+		}
+		/* NASSCOM Featured Section */
+		.nasscom-featured > tbody > tr > td {
+			display: block !important;
+			width: 100% !important;
+			text-align: center !important;
+			padding-bottom: 15px !important;
+		}
+		.nasscom-featured td.newsletter-btn-cell {
+			display: inline-block !important;
+			width: 48% !important;
+			padding: 5px !important;
+			box-sizing: border-box !important;
+		}
+		.nasscom-featured td.newsletter-btn-cell:last-child {
+			display: block !important;
+			width: 100% !important;
+			text-align: center !important;
+		}
+		.nasscom-featured td.newsletter-btn-cell:last-child table {
+			margin: 10px auto 0 !important;
+			display: inline-block !important;
+		}
+		/* Global Word Break and Box Model */
+		body, table, td, p, a, h1, h2, h3, h4 {
+			word-break: break-word !important;
+			box-sizing: border-box !important;
+		}
+		/* Centering buttons on mobile */
+		table[role="presentation"][style*="margin"] {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+		/* Reset padding for specific segments */
+		#general_conversation td[style*="padding:60px"] {
+			padding: 40px 16px !important;
+		}
+		.newsletter-card {
+			padding: 40px 30px !important;
+			border-radius: 16px !important;
+		}
+		#awards .stack > tbody > tr > td {
+			padding-top: 10px !important;
+			padding-bottom: 10px !important;
+		}
+		td[width="280"] {
+			padding-top: 15px !important;
+		}
+		td[style*="linear-gradient"] {
+			padding-left: 30px !important;
+			padding-right: 20px !important;
+			background: linear-gradient(to right, #06907b 0, #06907b 12px, #f6f9ff 12px, #f6f9ff 100%) !important;
+		}
+	}
+	/* Desktop/Tablet: Align buttons at same level in Awards grid */
+	@media screen and (min-width:600px) {
+		#awards .stack td[width="50%"] > div > table > tbody > tr > td {
+			vertical-align: bottom !important;
+			height: 260px !important;
 		}
 	}
 </style></head>
@@ -266,7 +227,7 @@
   <tr>
     <td bgcolor="#f6f9ff" class="px" style="padding-top:22px;padding-bottom:18px;text-align:center;">
 
-      <img src="https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/c2e0273b-0dab-d392-fe35-965293bee40c.png"
+      <img src="https://updates.orchvate.com/assests/logo_orchvate.png"
           width="150"
           alt="Orchvate"
           style="display:block;margin:0 auto 10px;border:0;outline:none;text-decoration:none;height:auto;">
@@ -355,7 +316,7 @@
         </table>
 
         <!-- Sign-off -->
-        <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.6; text-align:center;">
+        <p style="margin:0; font-family:Arial,Helvetica,sans-serif; font-size:16px; color:#111111; line-height:1.6;">
           With gratitude,<br>
           <strong style="font-size:18px; color:#150e56;">Geethanjali &amp; Panchali</strong><br>
           <span style="font-size:14px; color:#666; letter-spacing:1px;">Cofounders, Orchvate</span>
@@ -907,38 +868,39 @@
 
           <div style="
           border-radius:16px;
-          background-color:#f6f9ff;
+          background-color:#1f5f55;
           background-image:
-            linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+            linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
             url('https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/9f4da7b2-fbe7-5b3d-06d5-5944bf6328e9.png');
           background-repeat:repeat;
           padding:18px;">
 
-            <p style="font-family:Arial;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f6f9ff;margin:0 0 6px;">
+
+            <p style="font-family:Arial;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#dff6f1;margin:0 0 6px;">
               The ADHD Lens
             </p>
 
-            <h3 style="font-family:Arial;color:#f6f9ff;font-size:18px;margin:0 0 8px;">
+            <h3 style="font-family:Arial;color:#ffffff;font-size:18px;margin:0 0 8px;">
               ADHD Self-Assessment
             </h3>
 
-            <p style="font-family:Arial;color:#f6f9ff;font-size:14px;line-height:1.5;margin:0 0 14px;">
+            <p style="font-family:Arial;color:#e8f9f5;font-size:14px;line-height:1.5;margin:0 0 14px;">
               A quick check-in on attention, organisation, and impulse patterns.
             </p>
 
             <!-- Button -->
             <table role="presentation" cellpadding="0" cellspacing="0">
               <tr>
-                <td bgcolor="#150e56" style="border-radius:999px;">
+                <td bgcolor="#ffffff" style="border-radius:999px;">
                   <a href="https://www.orchvate.com/assessments/adhd.html"
-                     style="color:#ffffff;padding:10px 16px;display:inline-block;font-family:Arial;font-size:14px;font-weight:bold;">
+                     style="color:#1f5f55;padding:10px 16px;display:inline-block;font-family:Arial;font-size:14px;font-weight:bold;">
                     Start now
                   </a>
                 </td>
               </tr>
             </table>
 
-            <p style="font-family:Arial;font-size:12px;color:#f6f9ff;margin:10px 0 0;">
+            <p style="font-family:Arial;font-size:12px;color:#dff6f1;margin:10px 0 0;">
               ~7 min quiz
             </p>
 
@@ -968,39 +930,39 @@
 
   <div style="
     border-radius:16px;
-    background-color:#f6f9ff;
+    background-color:#0f0b3f;
     background-image:
-      linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
-      url('https://mcusercontent.com/201e76b8f447ee4c8b7fbe53e/images/05bdf046-d1a7-4778-95ae-30d61862773c.png');
+      linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)),
+      url('https://updates.orchvate.com/assests/blue.png');
     background-repeat:repeat;
     padding:18px;
   ">
 
-    <p style="font-family:Arial;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#f6f9ff;margin:0 0 6px;">
+    <p style="font-family:Arial;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:#ffffff;margin:0 0 6px;">
       The Autism Spectrum
     </p>
 
-    <h3 style="font-family:Arial;color:#f6f9ff;font-size:18px;margin:0 0 8px;">
+    <h3 style="font-family:Arial;color:#ffffff;font-size:18px;margin:0 0 8px;">
       Autism Self-Assessment
     </h3>
 
-    <p style="font-family:Arial;color:#f6f9ff;font-size:14px;line-height:1.5;margin:0 0 14px;">
+    <p style="font-family:Arial;color:#ffffff;font-size:14px;line-height:1.5;margin:0 0 14px;">
       Explore communication, sensory needs, and routine patterns.
     </p>
 
     <!-- Button -->
     <table role="presentation" cellpadding="0" cellspacing="0">
       <tr>
-        <td bgcolor="#150e56" style="border-radius:999px;">
+        <td bgcolor="#ffffff" style="border-radius:999px;">
           <a href="https://www.orchvate.com/assessments/autism.html"
-             style="color:#ffffff;padding:10px 16px;display:inline-block;font-family:Arial;font-size:14px;font-weight:bold;">
+             style="color:#150e56;padding:10px 16px;display:inline-block;font-family:Arial;font-size:14px;font-weight:bold;">
             Start now
           </a>
         </td>
       </tr>
     </table>
 
-    <p style="font-family:Arial;font-size:12px;color:#f6f9ff;margin:10px 0 0;">
+    <p style="font-family:Arial;font-size:12px;color:#ffffff;margin:10px 0 0;">
       ~12 min quiz
     </p>
 
@@ -1012,6 +974,7 @@
   <![endif]-->
 
 </td>
+
 
       </tr>
     </table>
@@ -1034,7 +997,6 @@
     </table>
   </td>
 </tr>
-
 <!-- =========================================
      COACHING + WORKSHOPS
      ========================================= -->
@@ -1069,7 +1031,7 @@
                        style="display:block;width:320px;max-width:100%;height:auto;border-radius:16px;border:2px solid #06907b;">
                 </td>
 
-                <td width="280" valign="top" style="padding:85px 0 0 14px;">
+                <td width="280" valign="top" style="padding:15px 0 0 0;" class="mobile-padding-reset">
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
 
                     <tr>
@@ -1150,7 +1112,7 @@
 
                 </td>
 
-                <td width="280" valign="top" style="padding:85px 0 14px 14px;">
+                <td width="280" valign="top" style="padding:15px 0 14px 0;" class="mobile-padding-reset">
 
                   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
                     <tr>
