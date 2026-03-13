@@ -132,48 +132,50 @@
 			margin: 0 auto !important;
 			table-layout: fixed !important;
 		}
-		h1 {
-			font-size: 26px !important;
-			line-height: 1.3 !important;
-		}
-		h2.section-title {
-			font-size: 24px !important;
-			line-height: 1.35 !important;
-		}
-		.newsletter-heading {
-			font-size: 24px !important;
-			line-height: 1.35 !important;
-		}
-		.newsletter-text,
-		.body-text {
-			font-size: 15px !important;
-			line-height: 1.65 !important;
-		}
 		table[width="700"], img[width="700"], img[width="592"] {
 			width: 100% !important;
 			height: auto !important;
 		}
-		div[style*="max-width:620px"] {
+		div[style*="max-width"] {
 			max-width: 100% !important;
+			width: 100% !important;
+			margin: 0 auto !important;
 		}
 		/* Stacking behavior */
 		.stack, .stack > tbody > tr > td {
 			display: block !important;
 			width: 100% !important;
+			max-width: 100% !important;
 			box-sizing: border-box !important;
+			margin: 0 auto !important;
+			float: none !important;
+		}
+		/* Tables/cells can sometimes force horizontal overflow in email clients */
+		table, td {
+			min-width: 0 !important;
 		}
 		.stack td {
 			padding-left: 0 !important;
 			padding-right: 0 !important;
 		}
-		.mobile-padding-reset {
-			padding-left: 0 !important;
-			padding-right: 0 !important;
-		}
-		td[width="50%"],
-		td[width="280"] {
-			display: block !important;
+		/* Center stacked grid items on mobile */
+		.stack td[width="50%"],
+		.stack td[width="33%"],
+		.stack td[width="25%"],
+		.stack td[width="40%"],
+		.stack td[width="60%"],
+		.stack td[width="70%"] {
 			width: 100% !important;
+			display: block !important;
+			text-align: center !important;
+		}
+		.stack td[width="50%"] > table,
+		.stack td[width="33%"] > table,
+		.stack td[width="25%"] > table,
+		.stack td[width="40%"] > table,
+		.stack td[width="60%"] > table,
+		.stack td[width="70%"] > table {
+			margin: 0 auto !important;
 		}
 		.mobile-center, .mobile-center td, .mobile-center h3, .mobile-center p, .mobile-center h4 {
 			text-align: center !important;
@@ -200,9 +202,10 @@
 			margin: 10px auto 0 !important;
 			display: inline-block !important;
 		}
-		/* Global Word Break and Box Model */
+		/* Global wrapping and box model */
 		body, table, td, p, a, h1, h2, h3, h4 {
-			word-break: break-word !important;
+			overflow-wrap: break-word !important;
+			word-break: normal !important;
 			box-sizing: border-box !important;
 		}
 		/* Centering buttons on mobile */
@@ -215,8 +218,17 @@
 			padding: 40px 16px !important;
 		}
 		.newsletter-card {
-			padding: 40px 30px !important;
+			padding: 24px 16px !important;
 			border-radius: 16px !important;
+			max-width: 100% !important;
+			width: auto !important;
+			box-sizing: border-box !important;
+			margin: 0 auto 24px !important;
+		}
+		.newsletter-card .newsletter-text {
+			max-width: 100% !important;
+			margin: 0 auto 24px !important;
+			padding: 0 4px !important;
 		}
 		#awards .stack > tbody > tr > td {
 			padding-top: 10px !important;
@@ -229,18 +241,6 @@
 			padding-left: 30px !important;
 			padding-right: 20px !important;
 			background: linear-gradient(to right, #06907b 0, #06907b 12px, #f6f9ff 12px, #f6f9ff 100%) !important;
-		}
-		.mobile-grid-card {
-			padding-left: 0 !important;
-			padding-right: 0 !important;
-			text-align: center !important;
-		}
-		.mobile-grid-card div {
-			display: inline-block !important;
-			width: 100% !important;
-			max-width: 320px !important;
-			margin: 0 auto !important;
-			text-align: center !important;
 		}
 	}
 	/* Desktop/Tablet: Align buttons at same level in Awards grid */
@@ -619,10 +619,10 @@
       </tr>
 
       <tr>
-        <td class="px" style="padding-top:8px;padding-bottom:10px;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="stack">
+        <td class="px" align="center" style="padding-top:8px;padding-bottom:10px;">
+          <table role="presentation" align="center" width="100%" cellpadding="0" cellspacing="0" border="0" class="stack" style="margin:0 auto;">
             <tr>
-              <td width="50%" style="padding:6px;">
+              <td width="50%" align="center" style="padding:6px;">
                 <table role="presentation" width="100%">
                   <tr>
                     <td align="center" style="padding:14px;background:#06907b;border-radius:8px;">
@@ -633,8 +633,8 @@
                 </table>
               </td>
 
-              <td width="50%" style="padding:6px;">
-                <table role="presentation" width="100%">
+              <td width="50%" align="center" style="padding:6px;">
+                <table role="presentation" align="center" width="100%" style="margin:0 auto;">
                   <tr>
                     <td align="center" style="padding:14px;background:#06907b;border-radius:8px;">
                       <div style="font-size:24px;font-weight:bold;color:#ffffff;font-family:Arial,Helvetica,sans-serif;">110</div>
@@ -646,8 +646,8 @@
             </tr>
 
             <tr>
-              <td width="50%" style="padding:6px;">
-                <table role="presentation" width="100%">
+              <td width="50%" align="center" style="padding:6px;">
+                <table role="presentation" align="center" width="100%" style="margin:0 auto;">
                   <tr>
                     <td align="center" style="padding:14px;background:#06907b;border-radius:8px;">
                       <div style="font-size:24px;font-weight:bold;color:#ffffff;font-family:Arial,Helvetica,sans-serif;">24</div>
@@ -657,8 +657,8 @@
                 </table>
               </td>
 
-              <td width="50%" style="padding:6px;">
-                <table role="presentation" width="100%">
+              <td width="50%" align="center" style="padding:6px;">
+                <table role="presentation" align="center" width="100%" style="margin:0 auto;">
                   <tr>
                     <td align="center" style="padding:14px;background:#06907b;border-radius:8px;">
                       <div style="font-size:24px;font-weight:bold;color:#ffffff;font-family:Arial,Helvetica,sans-serif;">7</div>
@@ -892,7 +892,7 @@
         <!-- ========================= -->
         <!-- ADHD CARD -->
         <!-- ========================= -->
-        <td width="50%" style="padding:8px;" valign="top" class="mobile-grid-card">
+        <td width="50%" style="padding:8px;" valign="top">
 
           <!--[if mso]>
           <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
@@ -954,7 +954,7 @@
 <!-- ========================= -->
 <!-- AUTISM CARD -->
 <!-- ========================= -->
-<td width="50%" style="padding:8px;" valign="top" class="mobile-grid-card">
+<td width="50%" style="padding:8px;" valign="top">
 
   <!--[if mso]>
   <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml"
