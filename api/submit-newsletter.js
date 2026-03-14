@@ -34,8 +34,8 @@ module.exports = async function handler(req, res) {
       return res.status(500).json({ success: false, message: "Server connection failed" });
     }
 
-    // Power Automate returns 202 Accepted — treat any response as success
-    return res.status(200).json({ success: true });
+    const result = await response.json();
+    return res.status(200).json(result);
 
   } catch (error) {
     console.error("Newsletter submission error:", error);

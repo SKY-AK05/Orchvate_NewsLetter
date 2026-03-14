@@ -73,7 +73,7 @@ async function handleUpdatesSubmission(name, email, submitButton) {
     console.log("Newsletter submission successful");
     // Reset button after successful submission
     setButtonLoading(submitButton, false, originalText);
-    return true;
+    return result;
   } catch (error) {
     console.error("Newsletter submission failed:", error);
     if (error.name === "AbortError") {

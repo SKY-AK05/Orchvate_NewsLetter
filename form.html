@@ -311,14 +311,15 @@
           return;
         }
 
-        const success = await handleUpdatesSubmission(
+        const result = await handleUpdatesSubmission(
           nameInput.value,
           emailInput.value,
           submitBtn,
         );
 
-        if (success) {
-          window.location.href = "thank-you.html";
+        if (result) {
+          const status = result.status || "Successfully subscribed";
+          window.location.href = `thank-you.html?status=${encodeURIComponent(status)}`;
         }
       });
     </script>

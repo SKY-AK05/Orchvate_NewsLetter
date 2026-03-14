@@ -1984,8 +1984,27 @@ appInsights.trackPageView();
         const name = document.getElementById('modal-name').value;
         const submitBtn = this.querySelector('button[type="submit"]');
 
-        const success = await handleUpdatesSubmission(name, email, submitBtn);
-        if (success) {
+        const result = await handleUpdatesSubmission(name, email, submitBtn);
+        if (result) {
+          // Update the success message based on the response status
+          if (result.status) {
+            const successHeading = newsletterSuccess.querySelector('h2');
+            const successPara = newsletterSuccess.querySelector('p');
+            const secondPara = newsletterSuccess.querySelectorAll('p')[1];
+            
+            successHeading.textContent = "Subscription Status";
+            successPara.textContent = result.status;
+            
+            // If already subscribed, we don't need the "check your inbox" message
+            if (secondPara) {
+              if (result.status.toLowerCase().includes('already')) {
+                secondPara.style.display = 'none';
+              } else {
+                secondPara.style.display = 'block';
+              }
+            }
+          }
+
           newsletterForm.style.display = 'none';
           newsletterModal.querySelector('.modal-title').style.display = 'none';
           newsletterModal.querySelector('.modal-desc').style.display = 'none';

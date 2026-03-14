@@ -22,13 +22,34 @@
 
       <h1>Thank you!</h1>
 
-      <p>We've sent you a confirmation email to complete your subscription.</p>
+      <p id="thank-you-message">We've sent you a confirmation email to complete your subscription.</p>
 
       <div class="divider"></div>
 
-      <p>
+      <p id="check-inbox-message">
         Please check your inbox to confirm your email address.
       </p>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const status = urlParams.get('status');
+          if (status) {
+            const heading = document.querySelector('h1');
+            const mainMsg = document.getElementById('thank-you-message');
+            const subMsg = document.getElementById('check-inbox-message');
+            
+            mainMsg.textContent = status;
+            
+            if (status.toLowerCase().includes('already')) {
+              heading.textContent = "Subscription Status";
+              if (subMsg) subMsg.style.display = 'none';
+              const divider = document.querySelector('.divider');
+              if (divider) divider.style.display = 'none';
+            }
+          }
+        });
+      </script>
 
      
 
