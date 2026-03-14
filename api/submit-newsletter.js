@@ -2,7 +2,7 @@
 // Proxies form data to Power Automate, keeping the URL private server-side.
 
 const NEWSLETTER_ENDPOINT =
-"https://defaultea77fe37fd2c429487c38746bce662.5a.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/39931e4bb402413282a57d0e9242d690/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=YSDpdrV385rElvAOrffDG8oZZOFVHrvF1GGW8Pziom8"
+"https://defaultea77fe37fd2c429487c38746bce662.5a.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/9181777d4cfe4dc5a070861026d067c2/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=vHdzuS_GGlxCfzcXRFULga4FArFnbWBSVuaL0hsHavA"
 
 module.exports = async function handler(req, res) {
   // Set CORS headers
