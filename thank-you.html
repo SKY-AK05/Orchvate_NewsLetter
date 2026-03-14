@@ -38,13 +38,40 @@
             const heading = document.querySelector('h1');
             const mainMsg = document.getElementById('thank-you-message');
             const subMsg = document.getElementById('check-inbox-message');
+            const divider = document.querySelector('.divider');
             
-            mainMsg.textContent = status;
+            let title = "Thank You!";
+            let message1 = "We've sent you a confirmation email to complete your subscription.";
+            let message2 = "Please check your inbox and confirm your email address.";
+
+            if (status === "pending") {
+              title = "Almost There!";
+              message1 = "You've already signed up for the Orchvate newsletter.";
+              message2 = "Please confirm your email using the link in your inbox.";
+            } else if (status === "verified") {
+              title = "You're Already Subscribed!";
+              message1 = "This email address is already subscribed to the Orchvate newsletter.";
+              message2 = "You'll continue receiving updates from our team.";
+            } else if (status !== "new") {
+              // Fallback for unexpected status values (displaying it as the main message)
+              message1 = status;
+              if (status.toLowerCase().includes('already')) {
+                title = "Subscription Status";
+                message2 = "";
+              }
+            }
+
+            heading.textContent = title;
+            mainMsg.textContent = message1;
             
-            if (status.toLowerCase().includes('already')) {
-              heading.textContent = "Subscription Status";
+            if (message2) {
+              if (subMsg) {
+                subMsg.textContent = message2;
+                subMsg.style.display = 'block';
+              }
+              if (divider) divider.style.display = 'block';
+            } else {
               if (subMsg) subMsg.style.display = 'none';
-              const divider = document.querySelector('.divider');
               if (divider) divider.style.display = 'none';
             }
           }

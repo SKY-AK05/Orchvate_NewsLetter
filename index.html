@@ -1986,23 +1986,28 @@ appInsights.trackPageView();
 
         const result = await handleUpdatesSubmission(name, email, submitBtn);
         if (result) {
-          // Update the success message based on the response status
-          if (result.status) {
-            const successHeading = newsletterSuccess.querySelector('h2');
-            const successPara = newsletterSuccess.querySelector('p');
-            const secondPara = newsletterSuccess.querySelectorAll('p')[1];
-            
-            successHeading.textContent = "Subscription Status";
-            successPara.textContent = result.status;
-            
-            // If already subscribed, we don't need the "check your inbox" message
-            if (secondPara) {
-              if (result.status.toLowerCase().includes('already')) {
-                secondPara.style.display = 'none';
-              } else {
-                secondPara.style.display = 'block';
-              }
-            }
+          let title = "Thank You!";
+          let message1 = "We've sent you a confirmation email to complete your subscription.";
+          let message2 = "Please check your inbox and confirm your email address.";
+
+          if (result.status === "pending") {
+            title = "Almost There!";
+            message1 = "You've already signed up for the Orchvate newsletter.";
+            message2 = "Please confirm your email using the link in your inbox.";
+          } else if (result.status === "verified") {
+            title = "You're Already Subscribed!";
+            message1 = "This email address is already subscribed to the Orchvate newsletter.";
+            message2 = "You'll continue receiving updates from our team.";
+          }
+
+          const successHeading = newsletterSuccess.querySelector('h2');
+          const successParas = newsletterSuccess.querySelectorAll('p');
+          
+          successHeading.textContent = title;
+          if (successParas.length >= 1) successParas[0].textContent = message1;
+          if (successParas.length >= 2) {
+            successParas[1].textContent = message2;
+            successParas[1].style.display = 'block';
           }
 
           newsletterForm.style.display = 'none';
